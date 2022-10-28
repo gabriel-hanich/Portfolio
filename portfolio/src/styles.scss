@@ -1,0 +1,39 @@
+@font-face {
+    font-family: quicksand;
+    src: url(./assets/Fonts/Quicksand-Regular.ttf);
+}
+
+:root{
+    --bg-color: 45, 48, 71;
+    --base-color: 224, 211, 222;
+    --highlight-color: 255, 255, 255;
+    --hidden-color: 0, 0, 0;
+}
+
+html{
+    background-color: rgba(var(--bg-color));
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    color: rgba(var(--highlight-color), $alpha: 1.0);
+    font-family: quicksand;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+.hidden{
+    display: none;
+}
+
+.menu-container{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}

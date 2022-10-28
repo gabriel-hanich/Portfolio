@@ -1,0 +1,26 @@
+<div class="menu-container">
+    <app-menu-bar></app-menu-bar>
+</div>
+
+
+<div class="bars-container">
+    <div class="bars-bar" style="--bar-height: 20px; --bar-delay: 0.5s"><h1></h1></div>
+    <div class="bars-bar" style="--bar-height: 30px; --bar-delay: 0.75s"></div>
+    <div class="bars-bar" style="--bar-height: 40px; --bar-delay: 1s"></div>
+    <div class="bars-bar" style="--bar-height: 50px; --bar-delay: 1.15s"></div>
+    <div class="bars-bar" style="--bar-height: 60px; --bar-delay: 1.35s"></div>
+    <div class="bars-content" *ngIf="showBarContent"></div>
+</div>
+
+<div class="name-container">
+    <div class="name-text">
+        <h1>Hi! My Names Gabriel<br>and I build innovative</h1>
+        <div class="name-spinner">
+            <h1 class="name-spinner-text" *ngIf="currentBuild == 1" id="spinner1">Code</h1>
+            <h1 class="name-spinner-text" *ngIf="currentBuild == 2" id="spinner2">Websites</h1>
+            <h1 class="name-spinner-text" *ngIf="currentBuild == 3" id="spinner3">Projects</h1>
+        </div>
+    </div>
+</div>
+
+<div class="filler"></div>

@@ -1,0 +1,142 @@
+// TODO Delete
+.filler{
+    height: 1000px;
+    width: 98vw;
+}
+
+.bars{
+    &-container{
+        position: absolute;
+        bottom: 1%;
+        margin: 0px;
+        width: calc(100% - 2px);
+        height: 30%;
+        display: flex;
+        gap: 10%;
+        animation: bunch 0.85s cubic-bezier(.43,.09,.14,.78) 2.5s forwards;
+        flex-direction: column;
+
+        // TODO DELETE
+        // gap: 0px;
+    }
+
+    &-bar{
+        height: var(--bar-height);
+        width: 0%;
+        animation: extend-bar 1s var(--bar-delay) forwards;
+        background-color: rgba(var(--base-color));
+        overflow-y: hidden;
+        z-index: 2;
+
+        // TODO DELETE
+        // width: 100%;
+    }
+    &-content{
+        width: 100%;
+        height: 200px;
+        background-color: rgba(var(--base-color));
+        overflow-y: hidden;
+        z-index: 2;
+        animation: expand 1s ease 2s forwards;
+    }
+}
+
+.name{
+    &-container{
+        position: absolute;
+        left: 5%;
+        opacity: 0;
+        top: 45%;
+        animation: reveal-text 2.5s cubic-bezier(.15,.66,.45,.93) 3s forwards;
+        transition: all 0.5s ease;
+
+        // TODO DELETEE
+        // transform: translateY(-15vw);
+        // opacity: 100%;
+    }
+    &-spinner{
+        width: 100%;
+        height: 100%;
+        min-height: 50px;
+        min-width: 100px;
+        padding: 0px 5px;
+        text-align: center;
+
+        transition: all 1s ease;
+
+        animation: fade-in 2s ease forwards;
+
+        margin: auto;
+        margin-top: -20px;
+        background: #FC5C7D;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+        border-radius: 50px;
+
+        &-text{
+            animation: text-in 1.2s ease forwards;
+        }
+    }
+
+}
+
+
+@keyframes extend-bar {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes bunch {
+    0%{
+        gap: 10%;
+    }
+    100%{
+        gap: 0px;
+    }
+}
+
+@keyframes reveal-text{
+    0%{
+        opacity: 0%;
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-10vw);
+        opacity: 100%;
+    }
+}
+
+@keyframes text-in {
+    0%{
+        opacity: 0.25;
+        transform: rotate3d(1, 0, 0, 90deg) translateY(-50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: rotate3d(1, 0, 0, 0deg) translaeY(0px);
+    }
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    0%{
+        height: 200px;
+    }
+    100%{
+        height: 100%;
+    }
+}
