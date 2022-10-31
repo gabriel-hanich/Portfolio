@@ -1,10 +1,10 @@
 .menu{
     &-bar{
         margin: 0px;
-        border: 1px rgba(var(--hidden-color), $alpha: 0.85) solid;
+        border-bottom: 1px rgba(var(--hidden-color), $alpha: 0.85) solid;
         width: calc(100vw - 2px);
-        height: 100px;
-        background-color: rgba(var(--hidden-color), 0.85);
+        height: 80px;
+        background-color: rgba(var(--hidden-color), 0.05);
 
         transition: all 0.85s ease;
 
@@ -24,26 +24,56 @@
     &-text{
         font-size: 2rem;
         transition: all 0.85s ease;
+        color: rgba(var(--highlight-color), $alpha: 1.0);
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+    }
+    &-text::before{
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background: linear-gradient(to right, #6A82FB, #FC5C7D, #6A82FB);
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+    &-text:hover::before{
+        transform-origin: left;
+        transform: scaleX(1);
     }
 
     &-item{
         overflow: hidden;
         width: 100%;
         height: 100%;
-
+        
         display: flex;
         justify-content: center;
         align-items: center;
+        border-right: 1px rgba(var(--hidden-color), $alpha: 0.85) solid;
     }
     
     &-logo{
         grid-area: "content";
         height: 100%;
         width: 100%;
+        max-height: 80px;
         overflow: hidden;
         &-img{
             height: 100%;
             width: auto;
+            cursor: pointer;
         }
+    }
+    &-name{
+        border-left: 1px rgba(var(--hidden-color), $alpha: 0.85) solid;
     }
 }

@@ -9,12 +9,18 @@
     <div class="bars-bar" style="--bar-height: 40px; --bar-delay: 1s"></div>
     <div class="bars-bar" style="--bar-height: 50px; --bar-delay: 1.15s"></div>
     <div class="bars-bar" style="--bar-height: 60px; --bar-delay: 1.35s"></div>
-    <div class="bars-content" *ngIf="showBarContent"></div>
+    <div class="bars-content" *ngIf="showBarContent">
+      <h1 class="project-text project-content">Frontend</h1>
+      <div class="project-hex project-content" style="--hex-color: 84, 101, 255"></div>
+      <h1 class="project-text project-content">Backend</h1>
+      <div class="project-hex project-content" style="--hex-color: 240, 84, 79"></div>
+      <h1 class="project-text project-content">Analysis</h1>
+    </div>
 </div>
 
 <div class="name-container">
     <div class="name-text">
-        <h1>Hi! My Names Gabriel<br>and I build innovative</h1>
+        <h1>Hi! My name's Gabriel<br>and I build innovative</h1>
         <div class="name-spinner">
             <h1 class="name-spinner-text" *ngIf="currentBuild == 1" id="spinner1">Code</h1>
             <h1 class="name-spinner-text" *ngIf="currentBuild == 2" id="spinner2">Websites</h1>
@@ -22,5 +28,21 @@
         </div>
     </div>
 </div>
+
+<div class="art-container">
+    <ol class="art-even">
+      <li class='art-hex' style="--hex-color: 38, 196, 133"></li>
+      <li class='art-hex' style="--hex-color: 84, 101, 255"></li>
+    </ol>  
+    <ol class="art-odd">
+      <li class='art-hex' style="--hex-color: 255, 140, 198"></li>
+      <li class='art-hex' style="--hex-color: 127, 150, 255"></li>
+      <li class='art-hex' style="--hex-color: 240, 84, 79"></li>
+    </ol>
+    <ol class="art-even">
+      <li class='art-hex' style="--hex-color: 127, 183, 190"></li>
+      <li class='art-hex' style="--hex-color: 189, 217, 191"></li>
+    </ol>  
+  </div>
 
 <div class="filler"></div>

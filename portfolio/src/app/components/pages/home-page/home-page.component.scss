@@ -4,6 +4,11 @@
     width: 98vw;
 }
 
+.menu-container{
+    transform: translateY(-150px);
+    animation: enter-menu 1.5s 7.5s forwards;
+}
+
 .bars{
     &-container{
         position: absolute;
@@ -23,8 +28,8 @@
     &-bar{
         height: var(--bar-height);
         width: 0%;
-        animation: extend-bar 1s var(--bar-delay) forwards;
         background-color: rgba(var(--base-color));
+        animation: extend-bar 1s var(--bar-delay) forwards;
         overflow-y: hidden;
         z-index: 2;
 
@@ -37,7 +42,15 @@
         background-color: rgba(var(--base-color));
         overflow-y: hidden;
         z-index: 2;
-        animation: expand 1s ease 2s forwards;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        
+        animation: shadow-drop 1s ease forwards;
+        // Todo delete
+        // height: 200px;
     }
 }
 
@@ -68,19 +81,98 @@
 
         margin: auto;
         margin-top: -20px;
-        background: #FC5C7D;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
         border-radius: 50px;
+        background-color: rgba($color: #000000, $alpha: 0.35);
 
         &-text{
             animation: text-in 1.2s ease forwards;
+            background: #FC5C7D; 
+            background: linear-gradient(to right, #6A82FB, #FC5C7D, #6A82FB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
 
 }
 
+$hex-size: 5em;
+.art{
+    &-container{
+        position: absolute;
+        top: 35%;
+        transform: translateY(-30vh);     
+        right: 0%;
+        width: 40vw;
+        height: 40vh;
+        line-height: 1.3;
+        opacity: 0;
+        animation: reveal-text 2.5s cubic-bezier(.15,.66,.45,.93) 9s forwards;
+    }
+    &-even {
+      position: relative;
+      left: ($hex-size / 1.1);
+    }
+    &-odd {
+      position: relative;
+      margin-top: -8.5%;
+      margin-bottom: -8.5%;
+      animation: expand-hex 1s ease 10s backwards;
+    }
+    &-hex {
+        position: relative;
+        margin: 1em auto;
+        width: $hex-size; height: ($hex-size * 1.7);
+        border-radius: 3px;
+        transform: rotate(-90deg);
+        display: inline-block;
+        margin-right: ($hex-size / 1.30);
+        transition: all 150ms ease-in-out;
+
+        overflow: none;
+        background: rgba(var(--hex-color), $alpha: 1.0);
+        background-position: center;
+        background-size: 100px;
+
+        background-repeat: no-repeat;
+        transition: all 1s ease;
+    }
+    &-hex:before, &-hex:after {
+      position: absolute;
+      width: inherit; height: inherit;
+      border-radius: inherit;
+      background: inherit;
+      content: '';
+    }
+    &-hex:before {
+      transform: rotate(60deg);
+    }
+    &-hex:after {
+        transform: rotate(-60deg);
+    }
+    &-hex:hover {
+        z-index: 4;
+        transform: scale(1.1);
+        box-shadow: 10px 10px 10px rgba($color: #000000, $alpha: 0.55);
+    }
+} 
+
+.project{
+    &-text{
+        color: #000000;
+        margin-left: 15px;
+    }
+    &-hex{
+        width: 50px;
+        height: 50px;
+        background-color: rgba(var(--hex-color), $alpha: 1.0);
+        margin: 0px 25px;
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)
+    }
+    &-content{
+        animation: fade-in 1s ease;
+    }
+}
 
 @keyframes extend-bar {
     0%{
@@ -106,7 +198,7 @@
         transform: translateY(0);
     }
     100%{
-        transform: translateY(-10vw);
+        transform: translateY(-20vh);
         opacity: 100%;
     }
 }
@@ -132,11 +224,37 @@
     }
 }
 
-@keyframes expand {
+@keyframes shadow-drop {
     0%{
-        height: 200px;
+        border-bottom: 0px rgba(var(--hidden-color), 1) solid;
+        border-top: 0px rgba(var(--hidden-color), 1) solid;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
     100%{
-        height: 100%;
+        padding-top: -10px;
+        padding-bottom: -10px;
+        border-bottom: 10px rgba(var(--hidden-color), 1) solid;
+        border-top: 10px rgba(var(--hidden-color), 1) solid;
+    }
+}
+
+@keyframes enter-menu {
+    0%{
+        transform: translateY(-150px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes expand-hex{
+    0%{
+       margin-top: -20%;
+       margin-bottom: -20%;
+    }
+    100%{
+        margin-top: -8.5%;
+        margin-bottom: -8.5%;
     }
 }

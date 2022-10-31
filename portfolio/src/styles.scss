@@ -13,13 +13,14 @@
 html{
     background-color: rgba(var(--bg-color));
     margin: 0px;
+    overflow-x: hidden;
 }
 
 body{
     margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6, p, a{
     color: rgba(var(--highlight-color), $alpha: 1.0);
     font-family: quicksand;
 }

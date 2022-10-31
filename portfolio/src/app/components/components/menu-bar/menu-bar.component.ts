@@ -15,10 +15,10 @@ export class MenuBarComponent implements OnInit {
         (document.getElementById("menu-bar") as HTMLElement).style.height = "50px";
         var textElems = document.getElementsByClassName("menu-text");
         for(var i=0; 1<textElems.length; i++){
-          (textElems[i] as HTMLElement).style.fontSize = "1rem"
+          (textElems[i] as HTMLElement).style.fontSize = "1.5rem"
         }
       }else{
-        (document.getElementById("menu-bar") as HTMLElement).style.height = "100px";
+        (document.getElementById("menu-bar") as HTMLElement).style.height = "80px";
         var textElems = document.getElementsByClassName("menu-text");
         for(var i=0; 1<textElems.length; i++){
           (textElems[i] as HTMLElement).style.fontSize = "2rem"

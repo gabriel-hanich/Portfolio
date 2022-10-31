@@ -20,15 +20,15 @@ export class HomePageComponent implements OnInit {
         clearInterval(buildInterval)
       }
     }, 2000)
-
-    // Combine all the bars into a single bar
+    
     setTimeout(()=>{
+      // Combine all the bars into a single bar
+      this.showBarContent = true;
       var bars = document.getElementsByClassName("bars-bar");
       for(var i=0; i<bars.length; i++){
         bars[i].classList.add("hidden");
       }
-      this.showBarContent = true;
-    }, 4000)
+    }, 8500)
   }
 
 }
