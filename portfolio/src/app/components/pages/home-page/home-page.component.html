@@ -10,11 +10,11 @@
     <div class="bars-bar" style="--bar-height: 50px; --bar-delay: 1.15s"></div>
     <div class="bars-bar" style="--bar-height: 60px; --bar-delay: 1.35s"></div>
     <div class="bars-content" *ngIf="showBarContent">
-      <h1 class="project-text project-content">Frontend</h1>
-      <div class="project-hex project-content" style="--hex-color: 84, 101, 255"></div>
-      <h1 class="project-text project-content">Backend</h1>
-      <div class="project-hex project-content" style="--hex-color: 240, 84, 79"></div>
-      <h1 class="project-text project-content">Analysis</h1>
+      <h1 class="fields-text fields-content">Frontend</h1>
+      <div class="fields-hex fields-content" style="--hex-color: 84, 101, 255"></div>
+      <h1 class="fields-text fields-content">Backend</h1>
+      <div class="fields-hex fields-content" style="--hex-color: 240, 84, 79"></div>
+      <h1 class="fields-text fields-content">Analysis</h1>
     </div>
 </div>
 
@@ -45,4 +45,6 @@
     </ol>  
   </div>
 
-<div class="filler"></div>
+<div class="projects-container hidden" id="projectContainer">
+  <app-projects *ngIf="showProjects" class="projects-project"></app-projects>
+</div>

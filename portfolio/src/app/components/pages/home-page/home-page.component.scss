@@ -7,6 +7,7 @@
 .menu-container{
     transform: translateY(-150px);
     animation: enter-menu 1.5s 7.5s forwards;
+    z-index: 10;
 }
 
 .bars{
@@ -157,7 +158,7 @@ $hex-size: 5em;
     }
 } 
 
-.project{
+.fields{
     &-text{
         color: #000000;
         margin-left: 15px;
@@ -171,6 +172,20 @@ $hex-size: 5em;
     }
     &-content{
         animation: fade-in 1s ease;
+    }
+}
+
+.projects{
+    &-container{
+        position: absolute;
+        top: 100vh;
+        width: calc(100vw - 3px);
+        height: auto;
+        min-height: 1000px;
+        padding-bottom: 2000px;
+    }
+    &-project{
+        animation: fade-in 2s ease;
     }
 }
 
