@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Python",
+        "startDate": "2020-04-01T11:49:41.000Z",
+        "iconName": "python.svg"
+    },
+    {
+        "name": "Java",
+        "startDate": "2020-08-15T12:49:41.000Z",
+        "iconName": "java.svg"
+    },
+    {
+        "name": "Javascript",
+        "startDate": "2021-03-10T11:49:41.000Z",
+        "iconName": "js.svg"
+    },
+    {
+        "name": "AWS",
+        "startDate": "2021-09-15T12:49:41.000Z",
+        "iconName": "aws.svg"
+    },
+    {
+        "name": "Angular",
+        "startDate": "2022-02-01T11:49:41.000Z",
+        "iconName": "angular.svg"
+    },
+    {
+        "name": "TypeScript",
+        "startDate": "2022-02-01T11:49:41.000Z",
+        "iconName": "ts.svg"
+    },
+    {
+        "name": "MongoDB",
+        "startDate": "2022-04-10T12:49:41.000Z",
+        "iconName": "database.svg"
+    }
+]

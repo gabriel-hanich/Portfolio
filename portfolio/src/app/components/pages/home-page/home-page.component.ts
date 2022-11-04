@@ -9,7 +9,9 @@ export class HomePageComponent implements OnInit {
   public currentBuild: number = -1;
   public showBarContent: boolean = false;
   public showProjects: boolean = false;
-
+  public showFiller: boolean = false;
+  public showExperience: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -34,18 +36,16 @@ export class HomePageComponent implements OnInit {
 
     // Show projects container
     setTimeout(()=>{
-        document.getElementById("projectContainer")?.classList.remove("hidden");
+      this.showFiller = true;
+        document.addEventListener("scroll", ()=>{
+          console.log(window.scrollY / window.innerHeight)
+          if(window.scrollY / window.innerHeight > 0.65){
+            this.showProjects = true
+          }if (window.scrollY / window.innerHeight > 0.99){
+            this.showExperience = true
+          }
+        })
     }, 10000)
-
-
-    document.addEventListener("scroll", (e: Event)=>{
-      if(window.scrollY > 799 && window.scrollY < 4889){
-        this.showProjects = true
-      }else{
-        this.showProjects = false;  
-      }
-      console.log(window.scrollY);
-    });
   }
 
 }

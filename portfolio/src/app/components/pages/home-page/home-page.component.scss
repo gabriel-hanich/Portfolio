@@ -1,7 +1,11 @@
 // TODO Delete
 .filler{
-    height: 1000px;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    height: 150vh;
     width: 98vw;
+    z-index: -1;
 }
 
 .menu-container{
@@ -97,7 +101,6 @@
 
 }
 
-$hex-size: 5em;
 .art{
     &-container{
         position: absolute;
@@ -112,7 +115,7 @@ $hex-size: 5em;
     }
     &-even {
       position: relative;
-      left: ($hex-size / 1.1);
+      left: (5em / 1.1);
     }
     &-odd {
       position: relative;
@@ -123,11 +126,11 @@ $hex-size: 5em;
     &-hex {
         position: relative;
         margin: 1em auto;
-        width: $hex-size; height: ($hex-size * 1.7);
+        width: 5em; height: (5em * 1.7);
         border-radius: 3px;
         transform: rotate(-90deg);
         display: inline-block;
-        margin-right: ($hex-size / 1.30);
+        margin-right: (5em / 1.30);
         transition: all 150ms ease-in-out;
 
         overflow: none;
@@ -180,12 +183,18 @@ $hex-size: 5em;
         position: absolute;
         top: 100vh;
         width: calc(100vw - 3px);
-        height: auto;
-        min-height: 1000px;
-        padding-bottom: 2000px;
+        height: fit-content;
+        animation: fade-in 0.85s ease;
     }
-    &-project{
-        animation: fade-in 2s ease;
+}
+
+.experience{
+    &-container{
+        position: absolute;
+        top: 180vh;
+        width: calc(100vw - 3px);
+        height: fit-content;  
+        animation: fade-in 0.85s ease;
     }
 }
 
@@ -271,5 +280,19 @@ $hex-size: 5em;
     100%{
         margin-top: -8.5%;
         margin-bottom: -8.5%;
+    }
+}
+
+
+@media screen and(max-height: 850px){
+    .art{
+        &-even{
+            left: (4em / 1.1)
+        }
+        &-hex{
+            margin: 0.75em auto;
+            width: 4em; height: (4em * 1.7);
+            margin-right: (4em / 1.30);
+        }
     }
 }

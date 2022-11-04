@@ -45,6 +45,11 @@
     </ol>  
   </div>
 
-<div class="projects-container hidden" id="projectContainer">
-  <app-projects *ngIf="showProjects" class="projects-project"></app-projects>
+<div class="filler" *ngIf="showFiller"></div>
+
+<div class="projects-container" id="projectContainer" *ngIf="showProjects">
+  <app-projects class="projects-project"></app-projects>
+</div>
+<div class="experience-container" id="experienceContainer" *ngIf="showExperience">
+  <app-experience class="experience-component"></app-experience>
 </div>

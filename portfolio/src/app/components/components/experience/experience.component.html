@@ -1,0 +1,19 @@
+<div class="experience-container">
+    <h1 class="experience-title">My Development Experience</h1>
+    <h2 class="experience-subtitle">I have worked on projects that run on the web, locally and on the cloud. I am proficient at Python, Javascript, TypeScript and Java</h2>
+    <div class="experience-bars-container">
+        <div class="experience-bars-section" *ngFor="let section of barList; let i = index;">
+            <div class="experience-bars-inner" style="--bar-width: {{section['width']}}%; --animation-delay: {{i * 0.15 + 1}}s">
+                <div class="experience-bars-text-container">
+                    <div class="experience-bars-text-label-container">
+                        <img class="experience-bars-text-label-icon" src="{{section['ico']}}">
+                        <p class="experience-bars-text-label-heading">{{section['name']}}</p>
+                    </div>
+                    <div class="experience-bars-text-time-container">
+                        <p class="experience-bars-text-time-text">{{section['timestr']}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

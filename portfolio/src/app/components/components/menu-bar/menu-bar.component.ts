@@ -11,21 +11,29 @@ export class MenuBarComponent implements OnInit {
 
   ngOnInit(): void {
     addEventListener('scroll', (e: Event)=>{
-      if(window.scrollY > 50){
-        (document.getElementById("menu-bar") as HTMLElement).style.height = "50px";
-        var textElems = document.getElementsByClassName("menu-text");
-        for(var i=0; 1<textElems.length; i++){
-          (textElems[i] as HTMLElement).style.fontSize = "1.5rem"
+      try{
+        if(window.scrollY > 50){
+          (document.getElementById("menu-bar") as HTMLElement).style.height = "50px";
+          var textElems = document.getElementsByClassName("menu-text");
+          for(var i=0; 1<textElems.length; i++){
+            (textElems[i] as HTMLElement).style.fontSize = "1.5rem"
+          }
+        }else{
+          (document.getElementById("menu-bar") as HTMLElement).style.height = "80px";
+          var textElems = document.getElementsByClassName("menu-text");
+          for(var i=0; 1<textElems.length; i++){
+            (textElems[i] as HTMLElement).style.fontSize = "2rem"
+          }
         }
-      }else{
-        (document.getElementById("menu-bar") as HTMLElement).style.height = "80px";
-        var textElems = document.getElementsByClassName("menu-text");
-        for(var i=0; 1<textElems.length; i++){
-          (textElems[i] as HTMLElement).style.fontSize = "2rem"
-        }
+      } catch(TypeError){
+        return
       }
 
     });
+  }
+
+  scrollPage(position: number){
+    window.scrollTo({top: position * window.innerHeight, left: 0, behavior: 'smooth'});
   }
 
 }
