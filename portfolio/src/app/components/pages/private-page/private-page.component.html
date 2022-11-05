@@ -1,5 +1,5 @@
 <div class="login-page" *ngIf="showLoginPage">
-    <div class="page-title">
+    <div class="page-title container">
         <h1>Hi there!</h1>
         <h2>Please enter your access Pin below</h2>
     </div>
@@ -15,7 +15,7 @@
         </form>
     </div>
 
-    <div class="explainer-container">
+    <div class="explainer-container container">
         <h3 class="explainer-text">Why need a pin?</h3>
         <p class="explainer-text">Some of the information on this page is private (resume, etc). A pin allows me to have this information easy to access, but only to a specific group of people.</p>
         <p class="explainer-text"><a href="/">Contact Me</a> If you believe you should have a code</p>
@@ -24,7 +24,7 @@
 </div>
 
 <div class="loading-page" *ngIf="!showLoginPage && !loginSuccessful">
-    <div class="page-title">
+    <div class="page-title container">
         <h1>Loading...</h1>
         <h2>Logging In with code: {{code}}</h2>
     </div>
@@ -35,5 +35,49 @@
 </div>
 
 <div class="details-page" *ngIf="!showLoginPage && loginSuccessful">
-    <h1>LOGGED IN</h1>
+    <div class="logout-container">
+        <button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+
+    <div class="name-container container">
+        <h1 class="name-text gradient-text">{{pageData['fullName']}}</h1>
+    </div>
+    <div class="intro-container container">
+        <h2 class="intro-text">{{pageData['introText']}}</h2>
+    </div>
+    <div class="about-container">
+        <p class="about-text">{{pageData['aboutText']}}</p>
+    </div>
+
+    <div class="section-container container" #achievements style="--animation-delay: 4s;">
+        <div class="section-title">
+            <img class="section-title-icon" src="../../../../assets/ico/dropdown.svg" #achievementCaret (click)="toggleSection(achievements, achievementCaret)">
+            <h1 class="section-title-text">Achievements</h1>
+        </div>
+        <div class="section-content" *ngFor="let period of pageData['achievementList']">
+            <h2 class="section-content-subheading">{{period['title']}}</h2>
+            <p class="section-content-text">{{period['explainer']}}</p>
+            <p class="section-content-text section-content-time">{{period['timePeriod']}}</p>
+        </div>
+    </div>
+
+    <div class="section-container container" #education style="--animation-delay: 5s;">
+        <div class="section-title">
+            <img class="section-title-icon" src="../../../../assets/ico/dropdown.svg" #educationCaret (click)="toggleSection(education, educationCaret)">
+            <h1 class="section-title-text">Education</h1>
+        </div>
+        <div class="section-content" *ngFor="let period of pageData['educationList']">
+            <h2 class="section-content-subheading">{{period['title']}}</h2>
+            <p class="section-content-text">{{period['explainer']}}</p>
+            <p class="section-content-text section-content-time">{{period['timePeriod']}}</p>
+        </div>
+    </div>
+
+    <div class="resume-container">
+        <h1 class="resume-title">My Resume</h1>
+        <a href="{{pageData['resumeLink']}}" target="_blank">
+            <button class="resume-button">Available Here</button>
+        </a>
+    </div>
+
 </div>

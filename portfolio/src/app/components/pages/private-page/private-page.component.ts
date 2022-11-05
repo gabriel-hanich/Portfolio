@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrivDataService } from 'src/app/services/connections/priv-data.service';
+import { packet } from 'src/app/types';
 
 @Component({
   selector: 'app-private-page',
@@ -10,17 +11,22 @@ export class PrivatePageComponent implements OnInit {
   public showLoginPage: boolean = true;
   public loginSuccessful: boolean = false;
   public code: String = "";
+  public pageData: packet;
 
   constructor(private connections: PrivDataService) { }
 
   ngOnInit(): void {
+    window.scrollTo({top: 0, left: 0, behavior: 'auto'});
     var priorCode: string | null = localStorage.getItem("code");
     if(priorCode){
       this.showLoginPage = false;
       this.code = priorCode;
       this.connections.checkCode().subscribe((res: boolean)=>{
         if(res){
-          this.loginSuccessful = true
+          this.loginSuccessful = true;
+          this.connections.getData().subscribe((res: packet)=>{
+            this.pageData = res;
+          })
         }
       });
 
@@ -49,6 +55,18 @@ export class PrivatePageComponent implements OnInit {
         });
       }, 150)
     }
+  }
+
+  toggleSection(sectionElement: HTMLElement, caretElement: HTMLElement){
+    sectionElement.classList.toggle("expanded");
+    caretElement.classList.toggle("rotated-caret");
+  }
+
+  logout():void{
+    localStorage.clear();
+    setTimeout(()=>{
+      location.reload();
+    }, 150)
   }
 
 }
