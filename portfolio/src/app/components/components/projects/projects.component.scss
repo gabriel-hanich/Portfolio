@@ -17,14 +17,6 @@
             margin-left: 30px;
         }
         &-heading{
-            background: #ff00cc;  /* fallback for old browsers */
-            background: linear-gradient(to right, #5a5acc, #d666d1, #5a5acc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200%;
-            background-position: 0% center;
-            animation: change-background linear 2s infinite;
             margin-bottom: 0px;
         }
         &-subheading{
@@ -36,8 +28,8 @@
     &-grid{
         &-container{
             width: 100%;
-            height: 40vh;
-            max-height: 400px;
+            height: fit-content;
+            min-height: 40vh;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -45,15 +37,16 @@
             gap: 35px;
         }
         &-card{
-            background: var(--background-gradient); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: var(--background-gradient);
             background-size: 200%;
             background-position: 0% center;
             margin-bottom: 0px;
 
             position: relative;
 
-            height: 100%;
+            height: 400px;
             aspect-ratio: 3/4;
+            width: auto;
             padding: 0px 10px;
             text-align: center;
             
@@ -114,20 +107,16 @@
     }
 }
 
-
-@keyframes change-background {
-    0%{
-        background-position: 0% center;
-    }
-    100%{
-        background-position: -200% center;
-    }
-}
-
 @keyframes slide-in{
     0%{
         transform: translateX(-100vw) scale(0.85);
     }100%{
         transform: translateX(0vw) scale(1);
+    }
+}
+
+@media screen  and(max-width: 1400px){
+    .projects-grid-container{
+        flex-wrap: wrap;
     }
 }

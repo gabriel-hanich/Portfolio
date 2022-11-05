@@ -11,4 +11,8 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openlink(link: string){
+    window.open(link, "_blank")?.focus();
+  }
+
 }

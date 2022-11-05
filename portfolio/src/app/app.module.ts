@@ -7,6 +7,8 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 import { MenuBarComponent } from './components/components/menu-bar/menu-bar.component';
 import { ProjectsComponent } from './components/components/projects/projects.component';
 import { ExperienceComponent } from './components/components/experience/experience.component';
+import { ContactComponent } from './components/components/contact/contact.component';
+import { PrivatePageComponent } from './components/pages/private-page/private-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { ExperienceComponent } from './components/components/experience/experien
     MenuBarComponent,
     ProjectsComponent,
     ExperienceComponent,
+    ContactComponent,
+    PrivatePageComponent,
   ],
   imports: [
     BrowserModule,

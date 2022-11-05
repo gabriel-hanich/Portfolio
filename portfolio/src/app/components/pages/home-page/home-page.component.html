@@ -45,11 +45,16 @@
     </ol>  
   </div>
 
-<div class="filler" *ngIf="showFiller"></div>
+<div class="filler" *ngIf="showInfo"></div>
 
-<div class="projects-container" id="projectContainer" *ngIf="showProjects">
-  <app-projects class="projects-project"></app-projects>
-</div>
-<div class="experience-container" id="experienceContainer" *ngIf="showExperience">
-  <app-experience class="experience-component"></app-experience>
+<div class="info-container" *ngIf="showInfo">
+  <div class="component-container" id="projectContainer" *ngIf="showProjects" style="--top-val: 100vh">
+    <app-projects class="component-project"></app-projects>
+  </div>
+  <div class="component-container" id="experienceContainer" *ngIf="showExperience" style="--top-val: 180vh">
+    <app-experience class="component-experience"></app-experience>
+  </div>
+  <div class="component-container" id="contactConainer" *ngIf="showContact" style="--top-val: 280vh">
+    <app-contact class="component-contact"></app-contact>
+  </div>
 </div>

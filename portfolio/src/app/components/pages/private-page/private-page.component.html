@@ -1,0 +1,39 @@
+<div class="login-page" *ngIf="showLoginPage">
+    <div class="page-title">
+        <h1>Hi there!</h1>
+        <h2>Please enter your access Pin below</h2>
+    </div>
+    
+    <div class="input-container">
+        <form action="" class="input-form" id="input-form">
+            <input type="text" class="input-field" maxlength="1" required>
+            <input type="text" class="input-field" maxlength="1" required>
+            <input type="text" class="input-field" maxlength="1" required>
+            <input type="text" class="input-field" maxlength="1" required>
+            <input type="text" class="input-field" maxlength="1" required>
+            <input type="text" class="input-field" maxlength="1" required>
+        </form>
+    </div>
+
+    <div class="explainer-container">
+        <h3 class="explainer-text">Why need a pin?</h3>
+        <p class="explainer-text">Some of the information on this page is private (resume, etc). A pin allows me to have this information easy to access, but only to a specific group of people.</p>
+        <p class="explainer-text"><a href="/">Contact Me</a> If you believe you should have a code</p>
+        
+    </div>
+</div>
+
+<div class="loading-page" *ngIf="!showLoginPage && !loginSuccessful">
+    <div class="page-title">
+        <h1>Loading...</h1>
+        <h2>Logging In with code: {{code}}</h2>
+    </div>
+
+    <div class="loading-container">
+        <div class="loading-wheel"></div>
+    </div>
+</div>
+
+<div class="details-page" *ngIf="!showLoginPage && loginSuccessful">
+    <h1>LOGGED IN</h1>
+</div>

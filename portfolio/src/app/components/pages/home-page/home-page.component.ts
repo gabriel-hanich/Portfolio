@@ -9,8 +9,9 @@ export class HomePageComponent implements OnInit {
   public currentBuild: number = -1;
   public showBarContent: boolean = false;
   public showProjects: boolean = false;
-  public showFiller: boolean = false;
+  public showInfo: boolean = false;
   public showExperience: boolean = false;
+  public showContact: boolean = false; 
   
   constructor() { }
 
@@ -32,20 +33,21 @@ export class HomePageComponent implements OnInit {
       for(var i=0; i<bars.length; i++){
         bars[i].classList.add("hidden");
       }
-    }, 8500)
+    }, 5500)
 
     // Show projects container
     setTimeout(()=>{
-      this.showFiller = true;
+      this.showInfo = true;
         document.addEventListener("scroll", ()=>{
-          console.log(window.scrollY / window.innerHeight)
           if(window.scrollY / window.innerHeight > 0.65){
             this.showProjects = true
-          }if (window.scrollY / window.innerHeight > 0.99){
+          }if (window.scrollY / window.innerHeight > 1.2){
             this.showExperience = true
+          } if(window.scrollY / window.innerHeight > 1.8){
+            this.showContact = true;
           }
         })
-    }, 10000)
+    }, 7500)
   }
 
 }

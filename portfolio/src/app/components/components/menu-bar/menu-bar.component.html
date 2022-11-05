@@ -1,17 +1,17 @@
 <div class="menu-bar" id="menu-bar">
     <div class="menu-logo">
-        <img class="menu-logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSORY7x1pJapJ80ZHYC-pwn_QSzduQUGBhA6A&usqp=CAU" alt="Logo" (click)="scrollPage(0)">
+        <img class="menu-logo-img" src="../../../../assets/img/portfolio-logo.png" alt="Logo" (click)="scrollPage(0)">
     </div>
     <div class="menu-blank menu-item"></div>
     <div class="menu-bar-content">
         <div class="menu-name menu-item">
             <a class="menu-text" (click)="scrollPage(0.65)">Projects</a>
         </div>
-        <div class="menu-name menu-item">
+        <div class="menu-name menu-item" (click)="scrollPage(1.65)">
             <a class="menu-text">Dev Experience</a>
         </div>
-        <div class="menu-name menu-item">
-            <a class="menu-text">Contact</a>
+        <div class="menu-name menu-item" id="contact">
+            <a class="menu-text" (click)="scrollPage(2.8)">Contact</a>
         </div>
     </div>
 </div>

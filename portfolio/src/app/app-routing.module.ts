@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExperienceComponent } from './components/components/experience/experience.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { PrivatePageComponent } from './components/pages/private-page/private-page.component';
 
 const routes: Routes = [
   {
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: "experience",
-    component: ExperienceComponent
+    path: "private",
+    component: PrivatePageComponent
   }
 ];
 

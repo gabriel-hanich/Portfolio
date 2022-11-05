@@ -2,7 +2,7 @@
     &-bar{
         margin: 0px;
         border-bottom: 1px rgba(var(--hidden-color), $alpha: 0.85) solid;
-        width: calc(100vw - 2px);
+        width: 100vw;
         height: 80px;
         background-color: rgba(var(--bg-color), 1);
 
@@ -28,6 +28,7 @@
         text-decoration: none;
         position: relative;
         cursor: pointer;
+        text-align: center;
     }
     &-text::before{
         position: absolute;
@@ -76,4 +77,8 @@
     &-name{
         border-left: 1px rgba(var(--hidden-color), $alpha: 0.85) solid;
     }
+}
+
+#contact{
+    background-color: rgba(#000, 0.35);
 }

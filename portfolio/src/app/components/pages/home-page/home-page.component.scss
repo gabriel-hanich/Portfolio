@@ -3,15 +3,18 @@
     position: absolute;
     top: 100%;
     left: 0%;
-    height: 150vh;
+    height: 260vh;
     width: 98vw;
     z-index: -1;
 }
 
 .menu-container{
     transform: translateY(-150px);
-    animation: enter-menu 1.5s 7.5s forwards;
+    animation: enter-menu 1.5s 5.5s forwards;
     z-index: 10;
+    position: fixed;
+    top: 0%;
+    left: 0%;
 }
 
 .bars{
@@ -111,7 +114,7 @@
         height: 40vh;
         line-height: 1.3;
         opacity: 0;
-        animation: reveal-text 2.5s cubic-bezier(.15,.66,.45,.93) 9s forwards;
+        animation: reveal-text 2.5s cubic-bezier(.15,.66,.45,.93) 6.5s forwards;
     }
     &-even {
       position: relative;
@@ -121,7 +124,7 @@
       position: relative;
       margin-top: -8.5%;
       margin-bottom: -8.5%;
-      animation: expand-hex 1s ease 10s backwards;
+      animation: expand-hex 1s ease 7.5s backwards;
     }
     &-hex {
         position: relative;
@@ -178,22 +181,17 @@
     }
 }
 
-.projects{
-    &-container{
-        position: absolute;
-        top: 100vh;
-        width: calc(100vw - 3px);
-        height: fit-content;
-        animation: fade-in 0.85s ease;
-    }
+.info-container{
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: fit-content;
 }
 
-.experience{
+.component{
     &-container{
-        position: absolute;
-        top: 180vh;
-        width: calc(100vw - 3px);
-        height: fit-content;  
+        margin-bottom: 30vh;
         animation: fade-in 0.85s ease;
     }
 }
@@ -295,4 +293,20 @@
             margin-right: (4em / 1.30);
         }
     }
+}
+
+@media screen and(max-width: 1500px){
+    .art-odd{
+        margin-top: -10.5%;
+        margin-bottom: -10.5%;
+    }   
+}
+@media screen and(max-width: 1200px){
+    .name-container{
+        left: 50%;
+        margin-left: -20%;
+    }
+    .art-container{
+        display: none;
+    } 
 }
