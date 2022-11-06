@@ -9,6 +9,7 @@ import { ProjectsComponent } from './components/components/projects/projects.com
 import { ExperienceComponent } from './components/components/experience/experience.component';
 import { ContactComponent } from './components/components/contact/contact.component';
 import { PrivatePageComponent } from './components/pages/private-page/private-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PrivatePageComponent } from './components/pages/private-page/private-pa
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

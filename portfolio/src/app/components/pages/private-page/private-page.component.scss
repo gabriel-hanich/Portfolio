@@ -193,6 +193,12 @@
     transform: rotate3d(1, 0, 0, 180deg);
 }
 
+.fail{
+    &-container{
+        margin-top: 50px;
+        animation: zoom-in 1s ease;
+    }
+}
 
 .resume{
     &-container{

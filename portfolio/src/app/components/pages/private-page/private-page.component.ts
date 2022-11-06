@@ -9,6 +9,7 @@ import { packet } from 'src/app/types';
 })
 export class PrivatePageComponent implements OnInit {
   public showLoginPage: boolean = true;
+  public showError: boolean = false;
   public loginSuccessful: boolean = false;
   public code: String = "";
   public pageData: packet;
@@ -18,15 +19,20 @@ export class PrivatePageComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo({top: 0, left: 0, behavior: 'auto'});
     var priorCode: string | null = localStorage.getItem("code");
+    console.log(priorCode)
     if(priorCode){
       this.showLoginPage = false;
       this.code = priorCode;
-      this.connections.checkCode().subscribe((res: boolean)=>{
-        if(res){
+      this.connections.getData(this.code).subscribe((res: boolean | packet)=>{
+        console.log(res);
+        if(!res){
+          this.showError = true
+          setTimeout(()=>{
+            this.logout();
+          }, 3500)
+        }else{
           this.loginSuccessful = true;
-          this.connections.getData().subscribe((res: packet)=>{
-            this.pageData = res;
-          })
+          this.pageData = (res as packet)
         }
       });
 

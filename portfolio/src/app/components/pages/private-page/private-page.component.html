@@ -18,8 +18,7 @@
     <div class="explainer-container container">
         <h3 class="explainer-text">Why need a pin?</h3>
         <p class="explainer-text">Some of the information on this page is private (resume, etc). A pin allows me to have this information easy to access, but only to a specific group of people.</p>
-        <p class="explainer-text"><a href="/">Contact Me</a> If you believe you should have a code</p>
-        
+        <p><a class="explainer-text" target="_blank" href="mailto:gabrielhanichwork@gmail.com">Contact Me</a>If you believe you should have a code</p>
     </div>
 </div>
 
@@ -31,6 +30,9 @@
 
     <div class="loading-container">
         <div class="loading-wheel"></div>
+    </div>
+    <div class="fail-container container" *ngIf="showError">
+        <h1>Oops, that pin isn't correct, ensure you typed it correctly</h1>
     </div>
 </div>
 
