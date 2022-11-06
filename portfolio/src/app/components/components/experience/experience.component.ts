@@ -29,7 +29,7 @@ export class ExperienceComponent implements OnInit {
         "name": experience[i]['name'],
         'timestr': this.convertToString(delay),
         'width': (delay / maxDelay)  * 100,
-        'ico': "../../../../assets/ico/" + experience[i]['iconName']
+        'ico': "/assets/ico/" + experience[i]['iconName']
       })
     }
   }
