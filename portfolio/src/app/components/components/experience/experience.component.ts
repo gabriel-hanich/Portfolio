@@ -22,14 +22,13 @@ export class ExperienceComponent implements OnInit {
     const experience: Section[] = experienceData as Section[];
 
     const maxDelay = (now - Date.parse(experience[0]['startDate']))
-
     for(var i=0; i<experience.length; i++){
       var delay: number = now - Date.parse(experience[i]['startDate'])
       this.barList.push({
         "name": experience[i]['name'],
         'timestr': this.convertToString(delay),
         'width': (delay / maxDelay)  * 100,
-        'ico': "/assets/ico/" + experience[i]['iconName']
+        'ico': experience[i]["iconName"]
       })
     }
   }
