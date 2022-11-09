@@ -276,8 +276,8 @@
        margin-bottom: -20%;
     }
     100%{
-        margin-top: -8.5%;
-        margin-bottom: -8.5%;
+        margin-top: -10.5%;
+        margin-bottom: -10.5%;
     }
 }
 
@@ -285,12 +285,12 @@
 @media screen and(max-height: 850px){
     .art{
         &-even{
-            left: (4em / 1.1)
+            left: (3.5em / 1.1)
         }
         &-hex{
             margin: 0.75em auto;
-            width: 4em; height: (4em * 1.7);
-            margin-right: (4em / 1.30);
+            width: 3.5em; height: (3.5em * 1.7);
+            margin-right: (3.5em / 1.30);
         }
     }
 }
