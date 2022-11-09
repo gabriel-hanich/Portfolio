@@ -53,7 +53,7 @@
 
     <div class="section-container container" #achievements style="--animation-delay: 4s;">
         <div class="section-title">
-            <img class="section-title-icon" src="../../../../assets/ico/dropdown.svg" #achievementCaret (click)="toggleSection(achievements, achievementCaret)">
+            <svg class="section-title-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" #achievementCaret (click)="toggleSection(achievements, achievementCaret)"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
             <h1 class="section-title-text">Achievements</h1>
         </div>
         <div class="section-content" *ngFor="let period of pageData['achievementList']">
@@ -62,10 +62,10 @@
             <p class="section-content-text section-content-time">{{period['timePeriod']}}</p>
         </div>
     </div>
-
+    
     <div class="section-container container" #education style="--animation-delay: 5s;">
         <div class="section-title">
-            <img class="section-title-icon" src="../../../../assets/ico/dropdown.svg" #educationCaret (click)="toggleSection(education, educationCaret)">
+            <svg class="section-title-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" #educationCaret (click)="toggleSection(education, educationCaret)"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
             <h1 class="section-title-text">Education</h1>
         </div>
         <div class="section-content" *ngFor="let period of pageData['educationList']">
