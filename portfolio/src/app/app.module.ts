@@ -10,6 +10,7 @@ import { ExperienceComponent } from './components/components/experience/experien
 import { ContactComponent } from './components/components/contact/contact.component';
 import { PrivatePageComponent } from './components/pages/private-page/private-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HowMadeComponent } from './components/components/how-made/how-made.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ExperienceComponent,
     ContactComponent,
     PrivatePageComponent,
+    HowMadeComponent,
   ],
   imports: [
     BrowserModule,

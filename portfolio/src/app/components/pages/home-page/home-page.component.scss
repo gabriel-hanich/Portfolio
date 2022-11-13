@@ -3,7 +3,7 @@
     position: absolute;
     top: 100%;
     left: 0%;
-    height: 260vh;
+    height: 300vh;
     width: 98vw;
     z-index: -1;
 }
@@ -192,8 +192,14 @@
 .component{
     &-container{
         margin-bottom: 30vh;
+    }
+    &-elem{
         animation: fade-in 0.85s ease;
     }
+}
+
+.hidden{
+    display: none;
 }
 
 @keyframes extend-bar {

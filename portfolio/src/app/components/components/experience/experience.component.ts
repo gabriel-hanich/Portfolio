@@ -18,7 +18,8 @@ export class ExperienceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const now: number = Date.now();
+    var now: number  = Date.now();
+
     const experience: Section[] = experienceData as Section[];
 
     const maxDelay = (now - Date.parse(experience[0]['startDate']))

@@ -38,14 +38,16 @@ export class HomePageComponent implements OnInit {
     // Show projects container
     setTimeout(()=>{
       this.showInfo = true;
-        document.addEventListener("scroll", ()=>{
-          if(window.scrollY / window.innerHeight > 0.65){
-            this.showProjects = true
-          }if (window.scrollY / window.innerHeight > 1.2){
-            this.showExperience = true
-          } if(window.scrollY / window.innerHeight > 1.8){
-            this.showContact = true;
-          }
+        window.addEventListener(("scroll"), ()=>{
+          var revealList = document.querySelectorAll(".component-container");
+          var windowHeight = window.innerHeight;
+          revealList.forEach((elem: Element)=>{
+            var elementTop = elem.getBoundingClientRect().top;
+            var marginTop = 300;
+            if(elementTop < windowHeight - marginTop){
+              elem.children.item(0)?.classList.remove("hidden");
+            }
+          });
         })
     }, 7500)
   }

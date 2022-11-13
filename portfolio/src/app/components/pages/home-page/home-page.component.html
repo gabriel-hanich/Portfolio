@@ -48,13 +48,16 @@
 <div class="filler" *ngIf="showInfo"></div>
 
 <div class="info-container" *ngIf="showInfo">
-  <div class="component-container" id="projects" *ngIf="showProjects" style="--top-val: 100vh">
-    <app-projects class="component-project"></app-projects>
+  <div class="component-container" id="projects">
+    <app-projects class="component-elem component-project hidden"></app-projects>
   </div>
-  <div class="component-container" id="experience" *ngIf="showExperience" style="--top-val: 180vh">
-    <app-experience class="component-experience"></app-experience>
+  <div class="component-container" id="experience">
+    <app-experience class="component-elem component-experience hidden"></app-experience>
   </div>
-  <div class="component-container" id="contact" *ngIf="showContact" style="--top-val: 280vh">
-    <app-contact class="component-contact"></app-contact>
+  <div class="component-container" id="contact">
+    <app-contact class="component-elem component-contact hidden"></app-contact>
+  </div>
+  <div class="component-container" id="howMade">
+    <app-how-made class="component-elem component-made hidden"></app-how-made>
   </div>
 </div>
