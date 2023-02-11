@@ -1,0 +1,25 @@
+.title{
+    &-container{
+        max-width: 700px;
+        width: 100%;
+        margin: auto;
+        margin-top: 5vh;
+    }
+}
+
+.hero{
+    min-height: 50vh;
+    height: fit-content;
+    margin-top: 27.5vh !important;
+}
+
+.projects{
+    height: fit-content;
+    margin-top: 150px !important;
+    padding-bottom: 150px;
+}
+
+.section-container{
+    width: calc(98vw - 5px);
+    margin: auto;
+}
