@@ -1,3 +1,9 @@
+.page-container{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
 .title{
     &-container{
         max-width: 700px;
@@ -16,10 +22,14 @@
 .projects{
     height: fit-content;
     margin-top: 150px !important;
-    padding-bottom: 150px;
 }
 
 .section-container{
-    width: calc(98vw - 5px);
+    width: 98vw;
     margin: auto;
+    margin-top: 150px;
+}
+
+.narrow{
+    max-width: 1500px;
 }

@@ -51,14 +51,14 @@
     background-color: var(--elem1-primary);
     width: 100%;
     animation: slideInLeft 1s ease !important;
-    background-image: url("../../../../assets/green-stacked-waves-haikei.png");
+    background-image: url("../../../../assets/green-stacked-haikei.svg");
 }
 #experience-card{
     grid-area: experience;
     max-height: 50vh;
     background-color: var(--elem2-primary);
     animation: slideInRight 1s ease;
-    background-image: url("../../../../assets/stacked-peaks-haikei.png");
+    background-image: url("../../../../assets/purple-stacked-waves.svg");
     height: 100%;
 
 }
@@ -66,13 +66,13 @@
     grid-area: contact;
     background-color: var(--elem3-primary);
     animation: slideInBottom 1s ease;
-    background-image: url("../../../../assets/blue-stacked-waves-haikei.png");
+    background-image: url("../../../../assets/blue-stacked-waves.svg");
 }
 #resume-card{
     grid-area: resume;
     background-color: var(--elem4-primary);
     animation: slideInRight 1s ease;
-    background-image: url("../../../../assets/red-stacked-waves-haikei.png");
+    background-image: url("../../../../assets/red-stacked-waves.svg");
 }
 
 

@@ -12,8 +12,9 @@ export class HeroContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  scrollToProjects(): void {
-    (document.getElementById("work") as HTMLElement).scrollIntoView({behavior: 'smooth'});
+  scrollToSection(sectionName: string): void {
+    (document.getElementById(sectionName) as HTMLElement).scrollIntoView({behavior: 'smooth'});
+    console.log(sectionName)
   }
 
 }

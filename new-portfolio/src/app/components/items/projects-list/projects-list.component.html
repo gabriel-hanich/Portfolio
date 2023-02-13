@@ -8,53 +8,14 @@
         </div>
     </div>
     <div class="projects-list" id="projectList">
-        <div class="projects-field">
+        <div class="projects-field" *ngFor="let project of projectsList">
             <div class="projects-field-content">
-                <p class="projects-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae.</p>
+                <p class="projects-text">{{project['description']}}</p>
             </div>
-            <div class="projects-field-bold" (click)="goToProject('theyspeakforus')">
-                <h1 class="projects-title">They Speak for Us</h1>
+            <div class="projects-field-bold" (click)="goToProject(project['name'])">
+                <h1 class="projects-title">{{project['name']}}</h1>
             </div>
         </div>
-        <div class="projects-field">
-            <div class="projects-field-content">
-                <p class="projects-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae.</p>
-            </div>
-            <div class="projects-field-bold" (click)="goToProject('basecamp')">
-                <h1 class="projects-title">Base Camp</h1>
-            </div>
-        </div>
-        <div class="projects-field">
-            <div class="projects-field-content">
-                <p class="projects-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae.</p>
-            </div>
-            <div class="projects-field-bold" (click)="goToProject('covidsim')">
-                <h1 class="projects-title">COVID Simulator</h1>
-            </div>
-        </div>
-        <div class="projects-field">
-            <div class="projects-field-content">
-                <p class="projects-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae.</p>
-            </div>
-            <div class="projects-field-bold" (click)="goToProject('evolutionsim')">
-                <h1 class="projects-title">Evolution Simulator</h1>
-            </div>
-        </div>
-        <div class="projects-field">
-            <div class="projects-field-content">
-                <p class="projects-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae.</p>
-            </div>
-            <div class="projects-field-bold" (click)="goToProject('impersonate')">
-                <h1 class="projects-title">Impersonate</h1>
-            </div>
-        </div>
-        <div class="projects-field">
-            <div class="projects-field-content">
-                <p class="projects-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae.</p>
-            </div>
-            <div class="projects-field-bold" (click)="goToProject('schooltime')">
-                <h1 class="projects-title">School Time</h1>
-            </div>
-        </div>
+        
     </div>
 </div>

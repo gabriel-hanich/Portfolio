@@ -63,6 +63,13 @@
                 width: auto;
                 margin-left: 15px;
             }
+            &-img{
+                height: 50px;
+                aspect-ratio: 1/1;
+                width: auto;
+                filter: invert(98%) sepia(0%) saturate(821%) hue-rotate(291deg) brightness(120%) contrast(100%);
+            }
+
         }
         &-text{
             &-container{

@@ -11,6 +11,8 @@ import { PrivateComponent } from './components/pages/private/private.component';
 import { ProjectsListComponent } from './components/items/projects-list/projects-list.component';
 import { ProjectComponent } from './components/pages/project/project.component';
 import { ExperienceComponent } from './components/items/experience/experience.component';
+import { ResumeComponent } from './components/items/resume/resume.component';
+import { ContactComponent } from './components/items/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ExperienceComponent } from './components/items/experience/experience.co
     PrivateComponent,
     ProjectsListComponent,
     ProjectComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    ResumeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
