@@ -1,6 +1,92 @@
-.container{
-    width: 90%;
-    margin: auto;
-    margin-top: 100vh;
-    height: 200vh;
+.nav{
+    &-container{
+        width: fit-content;
+        height: fit-content;
+        background-color: var(--root-primary);
+        margin: auto;
+    }
+}
+
+.page-container{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../../../../assets/red-stacked-waves.svg");
+}
+
+
+.field{
+    &-container{
+        width: 85%;
+        height: fit-content;
+        max-width: 750px;
+
+        position: absolute;
+        top: 15%;
+        left: calc(50% - 25%);
+
+        text-align: center;
+        border-radius: 30px;
+        background-color: var(--elem4-secondary);
+        padding: 30px 20px;
+        box-shadow: 10px 9px 10px 3px rgb(0 0 0 / 35%);
+
+        transition: all 2s ease;
+        transform: translateY(100vh) scale(0.35);
+        opacity: 0;
+    }
+    &-active{
+        opacity: 1;
+        transform: translateY(0vh) scale(1);
+    }
+
+    &-loading{
+        width: 100%;
+        max-width: 100px;
+        margin: auto;
+        margin-top: 35px;
+    }
+}
+
+.form{
+    &-container{
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+        padding-bottom: 50px;
+    }
+    &-elem{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    &-input{
+        background: rgba(0, 0, 0, 0.35);
+        padding: 5px 2px;
+        border: none;
+        color: var(--elem4-content);
+        font-size: 1.15rem;
+    }
+    &-label{
+        font-size: 1.3rem;
+    }
+    &-button{
+        grid-column: span 2;
+        
+        width: 35%;
+        min-width: 150px;
+        aspect-ratio: 3/1;
+        
+        margin: auto;
+        border: none;
+
+        background: var(--elem4-primary);
+        box-shadow: 10px 9px 10px 3px rgb(0 0 0 / 35%);
+        
+        cursor: pointer;
+        border-radius: 15px;
+    }
 }

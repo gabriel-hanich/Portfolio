@@ -31,7 +31,7 @@ export class ProjectsListComponent implements OnInit {
       setTimeout(()=>{
         this.registerScrollEffect();
       }, 500)
-    }, 1500);
+    }, 0);
 
   }
 

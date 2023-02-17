@@ -7,7 +7,7 @@
 
     --elem1-primary: #2ec4b6;
     --elem1-content: #fff;
-    --elem1-secondary: #1e857a;
+    --elem1-secondary: #3A5683;
 
     --elem2-primary: #6564db;
     --elem2-content: #fff;
@@ -19,7 +19,7 @@
     
     --elem4-primary: #d90429;
     --elem4-content: #fff;
-    --elem4-secondary: #f38194;
+    --elem4-secondary: rgb(71, 11, 21);
 
 }
 
@@ -30,8 +30,15 @@ html{
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
+body{
+    margin: 0;
+    padding: 0;
+}
+
 html::-webkit-scrollbar {
     display: none;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 *{
@@ -39,7 +46,7 @@ html::-webkit-scrollbar {
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, li, button{
+h1, h2, h3, h4, h5, h6, p, a, li, button, label, input{
     font-family: 'Heebo', sans-serif;
     color: var(--root-content);
     font-weight: 300;
@@ -54,6 +61,17 @@ h2{
 }
 p{
     font-size: 1,15rem;
+}
+
+.page-container{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.img-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @media screen and(max-width: 950px){

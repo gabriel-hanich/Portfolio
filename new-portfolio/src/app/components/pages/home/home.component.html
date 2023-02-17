@@ -5,13 +5,22 @@
     <div class="hero section-container">
         <app-hero-container></app-hero-container>
     </div>
-    <div class="projects section-container narrow" id="projects">
-        <app-projects-list></app-projects-list>
+    <!-- <div class="wave wave-top"></div> -->
+    <div class="wave wave-top">
+        <svg id="visual" viewBox="0 0 1920 300" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 179L32 164.2C64 149.3 128 119.7 192 102.3C256 85 320 80 384 86.3C448 92.7 512 110.3 576 134C640 157.7 704 187.3 768 184C832 180.7 896 144.3 960 122.7C1024 101 1088 94 1152 89.5C1216 85 1280 83 1344 97.5C1408 112 1472 143 1536 156.3C1600 169.7 1664 165.3 1728 169.8C1792 174.3 1856 187.7 1888 194.3L1920 201L1920 301L1888 301C1856 301 1792 301 1728 301C1664 301 1600 301 1536 301C1472 301 1408 301 1344 301C1280 301 1216 301 1152 301C1088 301 1024 301 960 301C896 301 832 301 768 301C704 301 640 301 576 301C512 301 448 301 384 301C320 301 256 301 192 301C128 301 64 301 32 301L0 301Z" fill="var(--elem1-secondary)" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+    </div>
+    <div class="projects section-container even-section" id="projects" style="background: var(--elem1-secondary)">
+        <div class="narrow">
+            <app-projects-list></app-projects-list>
+        </div>
+    </div>
+    <div class="wave wave-bottom">
+        <svg id="visual" viewBox="0 0 1920 300" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 89L45.7 97C91.3 105 182.7 121 274.2 138.3C365.7 155.7 457.3 174.3 548.8 167.7C640.3 161 731.7 129 823 120.3C914.3 111.7 1005.7 126.3 1097 130.3C1188.3 134.3 1279.7 127.7 1371.2 137.7C1462.7 147.7 1554.3 174.3 1645.8 167.7C1737.3 161 1828.7 121 1874.3 101L1920 81L1920 0L1874.3 0C1828.7 0 1737.3 0 1645.8 0C1554.3 0 1462.7 0 1371.2 0C1279.7 0 1188.3 0 1097 0C1005.7 0 914.3 0 823 0C731.7 0 640.3 0 548.8 0C457.3 0 365.7 0 274.2 0C182.7 0 91.3 0 45.7 0L0 0Z" fill="var(--elem1-secondary)" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
     </div>
     <div class="experience section-container narrow" id="experience">
         <app-experience></app-experience>
     </div>
-    <div class="resume section-container narrow" id="resume">
+    <div class="resume section-container narrow even-section" id="resume">
         <app-resume></app-resume>
     </div>
     <div class="contact section-container narrow" id="contact">

@@ -18,10 +18,7 @@
         height: 100%;
         border-radius: 30px;
         transition: all 0.5s ease;
-        // background-size: 200%;
-        background-size: cover;
-        // background-position: 0% 0%;
-        background-repeat: no-repeat;
+
         
         &:hover{
             transform: scale(0.975);
@@ -51,7 +48,7 @@
     background-color: var(--elem1-primary);
     width: 100%;
     animation: slideInLeft 1s ease !important;
-    background-image: url("../../../../assets/green-stacked-haikei.svg");
+    background-image: url("../../../../assets/green-stacked-waves.svg");
 }
 #experience-card{
     grid-area: experience;

@@ -1,8 +1,4 @@
-.page-container{
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
+
 
 .title{
     &-container{
@@ -27,9 +23,30 @@
 .section-container{
     width: 98vw;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 150px !important;
 }
+
+.even-section{
+    width: 100vw;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding: 50px 0px;
+}
+
+.wave{
+    width: 100vw;
+    aspect-ratio: 8/1;
+    min-height: 10vh;
+    &-top{
+        margin-top: 150px;
+    }
+    &-bottom{
+        margin-bottom: 150px;
+    }
+}
+
 
 .narrow{
     max-width: 1500px;
+    margin: auto;
 }

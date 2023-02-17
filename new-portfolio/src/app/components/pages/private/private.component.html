@@ -1,3 +1,24 @@
-<div class="container">
-    <app-contact></app-contact>
+<div class="img-bg page-container">
+    <div class="field-container login" [ngClass]="{'field-active': loginState=='login'}">
+        <h1>Login</h1>
+        <div class="form-container">
+            <form class="form-elem" (submit)="onFormSubmit($event, nameInput.value, pinInput.value)">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-input" name="username" #nameInput>
+                <label for="pin" class="form-label">Pin</label>
+                <input type="text" class="form-input" name="pin" #pinInput>
+                <button class="form-button">Go</button>
+            </form>
+        </div>
+    </div>
+    <div class="field-container load" [ngClass]="{'field-active': loginState=='load'}">
+        <h1>Loading</h1>
+        <div class="field-loading">
+            <app-loading></app-loading>
+        </div>
+    </div>
+    <div class="field-container load" [ngClass]="{'field-active': loginState=='fail'}">
+        <h1>Error</h1>
+        <p>{{errorText}}</p>
+    </div>
 </div>
