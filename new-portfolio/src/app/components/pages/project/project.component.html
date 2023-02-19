@@ -1,26 +1,29 @@
 <app-navbar></app-navbar>
-<div class="hero-container">
-    <div class="hero-content">
-        <h1 class="hero-text">{{projectName}}</h1>
+<div class="alert-container" *ngIf="readyState === 'loading'">
+    <h1>Loading</h1>
+    <div class="alert-loading">
+        <app-loading></app-loading>
     </div>
 </div>
-<div class="content-container">
-    <div class="tech-container">
-        <h2 class="tech-heading">Technologies Used</h2>
-        <div class="tech-imgs-container">
-            <img src="https://www.svgrepo.com/show/372929/python.svg" alt="" class="tech-imgs-ico">
-            <img src="https://www.svgrepo.com/show/342317/typescript.svg" alt="" class="tech-imgs-ico">
-            <img src="https://www.svgrepo.com/show/473729/mongodb.svg" alt="" class="tech-imgs-ico">
-            <img src="https://www.svgrepo.com/show/340603/logo-jupyter.svg" alt="" class="tech-imgs-ico">
+<div *ngIf="readyState === 'success'">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-text">{{projectName}}</h1>
         </div>
     </div>
-    <div class="content">
-        <h1>Heading</h1>
-        <h2>Subheading</h2>
-        <h3>Sub Subheading</h3>
-        <h4>H4</h4>
-        <h5>H5</h5>
-        <h6>H6</h6>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident sint quisquam magnam ex cum nam sapiente quia minus beatae ipsa delectus natus hic expedita ipsum, vel ea et blanditiis corporis aliquid voluptatibus iusto facilis repellat ad. Qui error molestias non, deleniti cumque ipsum quam architecto voluptatem. Nihil minus vitae cupiditate.</p>
+    <div class="content-container">
+        <div class="tech-container">
+            <h2 class="tech-heading">Technologies Used</h2>
+            <div class="tech-imgs-container">
+                <img src="{{img}}" alt="" class="tech-imgs-ico" *ngFor="let img of techUsed">
+            </div>
+        </div>
+        <div class="content" [innerHTML]="content">
+        </div>
     </div>
+</div>
+
+<div class="alert-container" *ngIf="readyState === 'fail'">
+    <h1>Error</h1>
+    <h2 class="alert-subheading">Oops, I haven't made this project yet. I'm sure I'll get there one day</h2>
 </div>

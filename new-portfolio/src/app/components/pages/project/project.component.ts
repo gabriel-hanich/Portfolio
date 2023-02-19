@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ConnectionsService } from 'src/app/services/connections/connections.service';
 
 @Component({
   selector: 'app-project',
@@ -7,12 +8,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-  public projectName: string = ""
+  public readyState: "loading" | "success" | "fail" = "loading";
+  public projectId: string = "";
 
-  constructor(private route: ActivatedRoute) { }
+  public projectName: string = "";
+  public techUsed: string[] = [];
+  public content: string = "";
+
+  constructor(private route: ActivatedRoute, private connections: ConnectionsService) { }
 
   ngOnInit(): void {
-    this.projectName = this.route.snapshot.paramMap.get("projectName") as string
+    this.projectId = this.route.snapshot.paramMap.get("projectName") as string
+    this.connections.getProjectData(this.projectId).then((res)=>{
+      this.projectName = res["projectName"];
+      this.techUsed = res["projectTech"].split(",");
+      this.content = res["content"]["rendered"];
+      this.readyState = "success";
+    }).catch((err)=> this.readyState = "fail")
   }
 
 }

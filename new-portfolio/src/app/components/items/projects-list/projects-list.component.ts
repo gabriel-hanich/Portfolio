@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { projectThumbnail } from 'src/types';
+import { DataService } from 'src/app/services/data/data.service';
+import { Project } from 'src/types';
 
 @Component({
   selector: 'app-projects-list',
@@ -8,31 +9,16 @@ import { projectThumbnail } from 'src/types';
   styleUrls: ['./projects-list.component.scss']
 })
 export class ProjectsListComponent implements OnInit {
-  public projectsList: projectThumbnail[] = [];
+  public projectsList: Project[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private globalData: DataService) { }
 
   ngOnInit(): void {
+    let allProjectList = this.globalData.getProjectList();
+    this.projectsList = allProjectList.filter((project: Project) => project.importantRank === 3) 
     setTimeout(()=>{
-      this.projectsList = [
-        {
-          "name": "They Speak for Us",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae"
-        },
-        {
-          "name": "Base Camp",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae"
-        },
-        {
-          "name": "Evolution Sim",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci delectus a, aperiam aliquid ratione dicta non, nam magni debitis similique excepturi molestiae aut voluptatem, consequuntur ea praesentium ducimus reiciendis. Dolore, harum? Consectetur a eum necessitatibus eius, reprehenderit sapiente assumenda dolore vitae labore adipisci laboriosam sunt aperiam cum officia, error nemo inventore eaque quae, eligendi earum quo est! Alias eaque vero provident aliquam earum! Accusamus facilis dolor autem quam dolore esse quod veniam itaque obcaecati vitae"
-        },
-      ]
-      setTimeout(()=>{
-        this.registerScrollEffect();
-      }, 500)
-    }, 0);
-
+      this.registerScrollEffect();
+    }, 500)
   }
 
   registerScrollEffect(): void{
@@ -62,8 +48,8 @@ export class ProjectsListComponent implements OnInit {
     });
   }
 
-  goToProject(projectName: string): void {
-    this.router.navigateByUrl("project/" + projectName)
+  goToProject(projectId: string): void {
+    this.router.navigateByUrl("project/" + projectId)
   }
 
 }

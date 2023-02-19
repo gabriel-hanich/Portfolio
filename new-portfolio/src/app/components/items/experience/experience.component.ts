@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { experienceTime } from 'src/types';
+import { DataService } from 'src/app/services/data/data.service';
+import { Experience } from 'src/types';
 
 @Component({
   selector: 'app-experience',
@@ -8,30 +9,26 @@ import { experienceTime } from 'src/types';
   
 })
 export class ExperienceComponent implements OnInit {
-  public barList: experienceTime[] = [];
+  public barList: Experience[] = [];
 
-  constructor() { }
+  constructor(private globalData: DataService) { }
 
   ngOnInit(): void {
     setTimeout(()=>{
-      let svgLinks: string[] = ["https://www.svgrepo.com/show/372929/python.svg", "https://www.svgrepo.com/download/106553/java.svg", "https://www.svgrepo.com/show/473670/javascript.svg"]
-      let labels: string[] = ["Python", "Java", "JavaScript"];
-      let startDates: string[] = ["2020-04-01T11:49:41.000Z", "2021-08-15T12:49:41.000Z", "2022-03-10T11:49:41.000Z"]
-
+      let experienceList: Experience[] = this.globalData.getExperienceList();
       let maxPXWidth = (document.getElementById("experienceContainer") as HTMLElement).getBoundingClientRect()['width']
-
-      let masterStart: Date = new Date(startDates[0])
-      labels.forEach((label: string, index: number)=>{
-        // Calculate time from start date
-        let startDate: Date = new Date(startDates[index]);
-        let duration = new Date().getTime() - startDate.getTime();
+      let masterStart: Date = experienceList[0].startDate;
+      
+      experienceList.forEach((experience)=>{
+        let duration = new Date().getTime() - experience["startDate"].getTime();
         this.barList.push({
-          "name": label,
-          "svg": svgLinks[index],
+          "name": experience["name"],
+          "svg": experience["svg"],
+          "startDate": experience["startDate"],
           "width": `calc(${(duration / (new Date().getTime() - masterStart.getTime())) * ((maxPXWidth - 150) / maxPXWidth) * 100}% + 150px)`,
           "duration": this.convertToString(duration)
         })
-      });
+      })
 
       setTimeout(()=>{
         this.registerScrollEffect();

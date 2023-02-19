@@ -1,11 +1,15 @@
-export interface projectThumbnail{
-    name: string;
-    description: string;
-}
-
-export interface experienceTime{
+export interface Experience{
     name: string;
     svg: string;
     width: string;
+    startDate: Date
     duration: string;
+}
+
+export interface Project{
+    id: string;
+    name: string;
+    description: string;
+    excerpt: string;
+    importantRank: number;
 }

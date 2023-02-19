@@ -1,3 +1,22 @@
+.alert{
+    &-container{
+        width: 80%;
+        max-width: 1000px;
+        margin: auto;
+        margin-top: 100px;
+        text-align: center;
+    }
+    &-loading{
+        width: 100%;
+        max-width: 100px;
+        margin: auto;
+    }
+    &-subheading{
+        margin-top: 5px;
+        font-size: 1.4rem;
+    }
+}
+
 .hero{
     &-container{
         width: 100vw;
@@ -40,8 +59,10 @@
     }
 
     margin: auto;
+    margin-top: 50px;
     width: 90%;
     padding-bottom: 150px;
+
 }
 
 .tech{
