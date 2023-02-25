@@ -16,6 +16,7 @@ import { ResumeComponent } from './components/items/resume/resume.component';
 import { ContactComponent } from './components/items/contact/contact.component';
 import { NavbarComponent } from './components/items/navbar/navbar.component';
 import { LoadingComponent } from './components/items/loading/loading.component';
+import { AdminComponent } from './components/pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoadingComponent } from './components/items/loading/loading.component';
     ResumeComponent,
     ContactComponent,
     NavbarComponent,
-    LoadingComponent
+    LoadingComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

@@ -11,17 +11,25 @@ export class ConnectionsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProjects(): Promise<any[]>{
+  getProjects(siteUrl?: string): Promise<any[]>{
+    let url = environment.backendUrl;
+    if(siteUrl){
+      url = siteUrl
+    }
     return new Promise(async(resolve, reject)=>{
-      this.httpClient.get(environment.backendUrl + "/projects").subscribe((res)=>{
+      this.httpClient.get(url + "/projects").subscribe((res)=>{
         resolve(res as any[])
       });
     });
   }
 
-  getExperience(): Promise<any[]>{
+  getExperience(siteUrl?: string): Promise<any[]>{
+    let url = environment.backendUrl;
+    if(siteUrl){
+      url = siteUrl
+    }
     return new Promise(async(resolve, reject)=>{
-      this.httpClient.get(environment.backendUrl + "/experiences").subscribe((res)=>{
+      this.httpClient.get(url + "/experiences").subscribe((res)=>{
         resolve(res as any[])
       });
     });
@@ -67,6 +75,14 @@ export class ConnectionsService {
       ).subscribe((res: any)=>{
         resolve(res);
       });
+    });
+  }
+
+  verifyAdmin(userName: string, pin: string): Promise<any>{
+    return new Promise<any>((resolve, reject)=>{
+      setTimeout(()=>{
+        resolve("ABCDEFGH");
+      }, 10)
     });
   }
 

@@ -2,7 +2,6 @@
     &-container{
         width: 100%;
         min-height: 50vh;
-
         display: grid;
         grid-template-areas:
             "projects projects experience experience"
@@ -18,7 +17,6 @@
         height: 100%;
         border-radius: 30px;
         transition: all 0.5s ease;
-
         
         &:hover{
             transform: scale(0.975);
@@ -47,16 +45,17 @@
     min-width: 250px;
     background-color: var(--elem1-primary);
     width: 100%;
+    height: 500pxs;
     animation: slideInLeft 1s ease !important;
     background-image: url("../../../../assets/green-stacked-waves.svg");
 }
 #experience-card{
     grid-area: experience;
     max-height: 50vh;
+    height: 250px;
     background-color: var(--elem2-primary);
     animation: slideInRight 1s ease;
     background-image: url("../../../../assets/purple-stacked-waves.svg");
-    height: 100%;
 
 }
 #contact-card{
@@ -64,12 +63,14 @@
     background-color: var(--elem3-primary);
     animation: slideInBottom 1s ease;
     background-image: url("../../../../assets/blue-stacked-waves.svg");
+    height: 250px;
 }
 #resume-card{
     grid-area: resume;
     background-color: var(--elem4-primary);
     animation: slideInRight 1s ease;
     background-image: url("../../../../assets/red-stacked-waves.svg");
+    height: 250px;
 }
 
 
@@ -128,6 +129,11 @@
     }
     #experience-card{
         max-width: 350px;
+        max-height: none !important;
+        height: 100% !important;
+    }
+    #contact-card, #resume-card{
+        height: 250px;
     }
 }
 
