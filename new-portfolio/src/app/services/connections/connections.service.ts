@@ -37,11 +37,30 @@ export class ConnectionsService {
 
   getProjectData(projectID: string): Promise<any>{
     return new Promise(async(resolve, reject)=>{
-        this.httpClient.get(environment.backendUrl + "/projects/" + projectID).subscribe(
-        data => resolve(data),
-        error => reject(error)
+        this.httpClient.get(environment.dataStoreUrl).subscribe(
+          {
+            next: data => {
+              (data as any)["projects"].forEach((proj: any) => {
+                  if(proj["id"].toString() === projectID){
+                    resolve(proj);
+                  }
+              });
+            },
+            error: error => reject(error)
+          }
       )
     })
+  }
+
+  getSiteData(): Promise<any>{
+    return new Promise(async(resolve, reject)=>{
+      this.httpClient.get(environment.dataStoreUrl).subscribe(
+        {
+          next: data => resolve(data),
+          error: error => reject(error)
+        }
+      )
+    });
   }
 
   private getDetails(): Promise<string>{
@@ -60,7 +79,6 @@ export class ConnectionsService {
       if(typeof details != "string"){
         details = ""
       }
-      console.log(details)
       this.httpClient.post(environment.secureURL + "/verify",
         {
           "details": details,
@@ -79,10 +97,25 @@ export class ConnectionsService {
   }
 
   verifyAdmin(userName: string, pin: string): Promise<any>{
-    return new Promise<any>((resolve, reject)=>{
-      setTimeout(()=>{
-        resolve("ABCDEFGH");
-      }, 10)
+    return new Promise<any>(async(resolve, reject)=>{
+      let details = await this.getDetails();
+      if(typeof details != "string"){
+        details = ""
+      }
+      this.httpClient.post(environment.secureURL + "/admin/verify",
+        {
+          "details": details,
+          "username": userName,
+          "pin": pin
+        },
+        {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8'
+          })
+        }
+      ).subscribe((res: any)=>{
+        resolve(res);
+      });
     });
   }
 

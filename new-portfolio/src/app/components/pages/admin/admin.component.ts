@@ -29,12 +29,12 @@ export class AdminComponent implements OnInit {
       event.preventDefault();
     }
     this.connections.verifyAdmin(userName, password).then((res)=>{
-      if(res){
+      if(res["success"]){
         this.signInStage = "success";
         localStorage.setItem("adminLogin", JSON.stringify({"userName": userName, "password": password}));
       }else{
         this.signInStage = "error";
-        this.errorText = res;
+        this.errorText = res["msg"];
       }
     });
     this.signInStage = "loading";
@@ -51,7 +51,6 @@ export class AdminComponent implements OnInit {
     let getData = async () => {
       let projectData = await this.connections.getProjects(siteUrl);
       let experienceData = await this.connections.getExperience(siteUrl);
-
       var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({"projects": projectData, "experience": experienceData}));
       var dlAnchorElem = document.getElementById('downloadAnchorElem') as HTMLElement;
       dlAnchorElem.setAttribute("href",     dataStr     );
@@ -61,6 +60,11 @@ export class AdminComponent implements OnInit {
     };
 
     getData();
+  }
+
+  logout():void{
+    localStorage.clear();
+    window.location.reload();
   }
 
 }

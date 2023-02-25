@@ -1,9 +1,9 @@
 <div class="page-container" *ngIf="signInStage != 'success'">
     <div class="elem-container" *ngIf="signInStage === 'prompt'">
         <h1>Login to Admin Dashboard</h1>
-        <form (submit)="verifyAdmin(emailInput.value, pwdInput.value, $event)" class="elem-form">
-            <label for="email" class="elem-label">Email</label>
-            <input name="email" type="text" class="elem-input" #emailInput>
+        <form (submit)="verifyAdmin(userNameInput.value, pwdInput.value, $event)" class="elem-form">
+            <label for="username" class="elem-label">Username</label>
+            <input name="username" type="text" class="elem-input" #userNameInput>
             <label for="pwd" class="elem-label">Password</label>
             <input name="pwd" type="password" class="elem-input" #pwdInput>
             <button class="elem-btn">Submit</button>
@@ -18,6 +18,7 @@
     <div class="elem-container" *ngIf="signInStage === 'error'">
         <h1>Error</h1>
         <h2>{{errorText}}</h2>
+        <a (click)="signInStage = 'prompt'" style="font-size: 1.25rem; text-decoration: underline; cursor: pointer;">Retry</a>
     </div>
 </div>
 <div class="page-container" *ngIf="signInStage === 'success'">
@@ -31,6 +32,11 @@
                 <input name="Url" type="text" class="admin-elem-form-input" #urlInput value="{{siteUrl}}">
                 <button class="admin-elem-form-submit">Generate</button>
             </form>
+        </div>
+        <div class="admin-elem">
+            <h2 class="admin-title">Logout</h2>
+            <p style="font-size: 1.25rem;">Logout from the admin console</p>
+            <button class="admin-elem-form-submit" (click)="logout()">Logout</button>
         </div>
     </div>
 </div>

@@ -32,7 +32,15 @@
             padding: 10px;
             transform: translateX(50%);
             transition: all 0.5s ease;
+
+
         }
+    }
+    &-text{
+        width: 80%;
+        margin: auto;
+        margin-top: 15px;
+        font-size: 1.35rem;
     }
 }
 

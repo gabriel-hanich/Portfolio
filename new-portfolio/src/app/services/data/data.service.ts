@@ -7,8 +7,12 @@ import { Experience, Project } from 'src/types';
 export class DataService {
   private projectList: Project[] = [];
   private experiences: Experience[] = [];
-
+  private siteData: any = [];
   constructor() { }
+
+  setSiteData(siteData: any): void{
+    this.siteData = siteData;
+  }
 
   setProjectList(projectList: Project[]): void{
     this.projectList = projectList;

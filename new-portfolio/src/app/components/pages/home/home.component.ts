@@ -14,39 +14,37 @@ export class HomeComponent implements OnInit {
   constructor(private connections: ConnectionsService, private globalData: DataService) { }
 
   ngOnInit(): void {
-    this.connections.getProjects().then((projects: any[])=>{
-      let projectsList: Project[] = [];
-      projects.forEach((project: any)=>{
-        projectsList.push(
-          {
-            "id": project["id"],
-            "name": project["projectName"],
-            "excerpt": project["excerpt"]["rendered"].replace(/<[^>]+>/g, ''),
-            "description": project["projectDescription"],
-            "importantRank": parseInt(project["importantRank"])
-          }
-        );
-      });
-      projectsList.sort((a, b)=> b.importantRank - a.importantRank);
-      this.globalData.setProjectList(projectsList);
-      this.hasLoaded = true;
-    });
-
-    this.connections.getExperience().then((experiences: any[])=>{
+    this.connections.getSiteData().then((res: any)=>{
       let experienceList: Experience[] = [];
-      experiences.forEach((experience)=>{
+      res["experience"].forEach((exp: any)=>{
         experienceList.push(
           {
-            "name": experience["experienceLabel"],
-            "startDate": new Date(experience["experienceStart"]),
-            "svg": experience["experienceIcon"],
+            "name": exp["experienceLabel"],
+            "startDate": new Date(exp["experienceStart"]),
+            "svg": exp["experienceIcon"],
             "duration": "",
             "width": "0"
           }
         )
       });
+      let projectsList: Project[] = [];
+      res["projects"].forEach((proj: any)=>{
+        projectsList.push({
+              "id": proj["id"],
+              "name": proj["projectName"],
+              "excerpt": proj["excerpt"]["rendered"].replace(/<[^>]+>/g, ''),
+              "description": proj["projectDescription"],
+              "importantRank": parseInt(proj["importantRank"])
+            }
+          );
+      });
+
+      projectsList.sort((a, b)=> b.importantRank - a.importantRank);
       experienceList.sort((a, b)=> a.startDate.getTime() - b.startDate.getTime());
-      this.globalData.setExperienceList(experienceList)
+      this.globalData.setSiteData(res);
+      this.globalData.setExperienceList(experienceList);
+      this.globalData.setProjectList(projectsList);
+      this.hasLoaded = true;
     });
   }
 
