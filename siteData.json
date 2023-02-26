@@ -89,7 +89,7 @@
             "template": "",
             "projectName": "Base Camp",
             "projectDescription": "Base camp is a cloud enabled app that allows students to study and plan their time on canpus.",
-            "projectTech": "https://www.svgrepo.com/show/503165/angular.svghttps://www.svgrepo.com/show/473729/mongodb.svg",
+            "projectTech": "https://www.svgrepo.com/show/503165/angular.svg,https://www.svgrepo.com/show/473729/mongodb.svg",
             "projectLink": "https://github.com/gabriel-hanich/base-camp",
             "startDate": "2022-02-18",
             "endDate": "2022-10-18",
