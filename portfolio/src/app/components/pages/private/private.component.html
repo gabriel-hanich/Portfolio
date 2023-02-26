@@ -1,0 +1,103 @@
+<div class="img-bg page-container" *ngIf="loginState != 'success'">
+    <div class="field-container login" [ngClass]="{'field-active': loginState=='login'}">
+        <h1>Login</h1>
+        <div class="form-container">
+            <form class="form-elem" (submit)="onFormSubmit(nameInput.value, pinInput.value, $event)">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-input" name="username" #nameInput>
+                <label for="pin" class="form-label">Pin</label>
+                <input type="text" class="form-input" name="pin" #pinInput>
+                <button class="form-button">Go</button>
+            </form>
+        </div>
+        <a href="/Portfolio/" style="text-decoration: underline; cursor: pointer;">Back</a>
+    </div>
+    <div class="field-container load" [ngClass]="{'field-active': loginState=='load'}">
+        <h1>Loading</h1>
+        <div class="field-loading">
+            <app-loading></app-loading>
+        </div>
+    </div>
+    <div class="field-container load" [ngClass]="{'field-active': loginState=='fail'}">
+        <h1>Error</h1>
+        <p>{{errorText}}</p>
+        <button class="form-button" style="margin-top: 45px; max-width: 45px;" (click)="loginState='login'">Try Again</button>
+    </div>
+</div>
+<div class="page-container" *ngIf="loginState === 'success'">
+    <div class="intro-container">
+        <div class="name-container">
+            <h1 class="name-text">{{content['fullName'].split(" ")[0]}}<br>{{content['fullName'].split(" ")[1]}}</h1>
+        </div>
+        <div class="tag-container">
+            <svg class="tag-curve" viewBox="0 0 900 600"  preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <g transform="translate(445.57990509893256 291.6039953665255)">
+                    <path d="M73.8 -132C95.6 -115.2 113.2 -95.4 137.7 -72.8C162.2 -50.3 193.6 -25.2 200.7 4.1C207.7 33.3 190.5 66.7 165.5 88.3C140.5 110 107.7 119.9 78.9 134.3C50 148.6 25 167.3 -6.1 177.8C-37.2 188.4 -74.3 190.7 -105.7 177.8C-137 164.9 -162.5 136.7 -177.9 104.5C-193.3 72.3 -198.6 36.2 -187.6 6.4C-176.6 -23.4 -149.2 -46.9 -131.2 -74.6C-113.2 -102.3 -104.6 -134.3 -84.3 -151.9C-64 -169.5 -32 -172.8 -3 -167.6C26 -162.4 52 -148.7 73.8 -132" fill="#4976a0" stroke="#4976a0" stroke-width="50"></path>
+                </g>
+            </svg>
+            <h3 class="tag-text">{{content["introText"]}}</h3>
+        </div>
+    </div>
+
+
+    <div class="wave wave-top">
+        <svg id="visual" viewBox="0 0 1920 300" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 179L32 164.2C64 149.3 128 119.7 192 102.3C256 85 320 80 384 86.3C448 92.7 512 110.3 576 134C640 157.7 704 187.3 768 184C832 180.7 896 144.3 960 122.7C1024 101 1088 94 1152 89.5C1216 85 1280 83 1344 97.5C1408 112 1472 143 1536 156.3C1600 169.7 1664 165.3 1728 169.8C1792 174.3 1856 187.7 1888 194.3L1920 201L1920 301L1888 301C1856 301 1792 301 1728 301C1664 301 1600 301 1536 301C1472 301 1408 301 1344 301C1280 301 1216 301 1152 301C1088 301 1024 301 960 301C896 301 832 301 768 301C704 301 640 301 576 301C512 301 448 301 384 301C320 301 256 301 192 301C128 301 64 301 32 301L0 301Z" fill="var(--elem2-primary)" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+    </div>  
+    <div class="about-container">
+        <p class="resume-text about-text">{{content["aboutText"]}}</p>
+    </div>
+    <div class="wave wave-bottom">
+        <svg id="visual" viewBox="0 0 1920 300" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 89L45.7 97C91.3 105 182.7 121 274.2 138.3C365.7 155.7 457.3 174.3 548.8 167.7C640.3 161 731.7 129 823 120.3C914.3 111.7 1005.7 126.3 1097 130.3C1188.3 134.3 1279.7 127.7 1371.2 137.7C1462.7 147.7 1554.3 174.3 1645.8 167.7C1737.3 161 1828.7 121 1874.3 101L1920 81L1920 0L1874.3 0C1828.7 0 1737.3 0 1645.8 0C1554.3 0 1462.7 0 1371.2 0C1279.7 0 1188.3 0 1097 0C1005.7 0 914.3 0 823 0C731.7 0 640.3 0 548.8 0C457.3 0 365.7 0 274.2 0C182.7 0 91.3 0 45.7 0L0 0Z" fill="var(--elem2-primary)" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+    </div>
+
+    <div class="cards-container">
+        <div class="cards-elem">
+            <div class="cards-header">
+                <h2 class="cards-header-text">Education</h2>
+            </div>
+            <div class="cards-content" *ngFor="let experience of content['educationList']">
+                <div class="cards-content-header">
+                    <h3 class="cards-content-header-text">{{experience['title']}}</h3>
+                    <p class="cards-content-header-time">{{experience['timePeriod']}}</p>
+                </div>
+                <p class="cards-content-text">{{experience['explainer']}}</p>
+            </div>
+        </div>
+        <div class="cards-elem">
+            <div class="cards-header">
+                <h2 class="cards-header-text">Achievements</h2>
+            </div>
+            <div class="cards-content" *ngFor="let experience of content['achievementList']">
+                <div class="cards-content-header">
+                    <h3 class="cards-content-header-text">{{experience['title']}}</h3>
+                    <p class="cards-content-header-time">{{experience['timePeriod']}}</p>
+                </div>
+                <p class="cards-content-text">{{experience['explainer']}}</p>
+            </div>
+        </div>
+        <div class="cards-elem">
+            <div class="cards-header">
+                <h2 class="cards-header-text">Work</h2>
+            </div>
+            <div class="cards-content" *ngFor="let experience of content['employmentList']">
+                <div class="cards-content-header">
+                    <h3 class="cards-content-header-text">{{experience['title']}}</h3>
+                    <p class="cards-content-header-time">{{experience['timePeriod']}}</p>
+                </div>
+                <p class="cards-content-text">{{experience['explainer']}}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <a href="{{content['resumeLink']}}">
+        <div class="tag-container link-container">
+            <svg class="tag-curve" viewBox="0 0 900 600"  preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <g transform="translate(445.57990509893256 291.6039953665255)">
+                    <path d="M73.8 -132C95.6 -115.2 113.2 -95.4 137.7 -72.8C162.2 -50.3 193.6 -25.2 200.7 4.1C207.7 33.3 190.5 66.7 165.5 88.3C140.5 110 107.7 119.9 78.9 134.3C50 148.6 25 167.3 -6.1 177.8C-37.2 188.4 -74.3 190.7 -105.7 177.8C-137 164.9 -162.5 136.7 -177.9 104.5C-193.3 72.3 -198.6 36.2 -187.6 6.4C-176.6 -23.4 -149.2 -46.9 -131.2 -74.6C-113.2 -102.3 -104.6 -134.3 -84.3 -151.9C-64 -169.5 -32 -172.8 -3 -167.6C26 -162.4 52 -148.7 73.8 -132" fill="var(--elem1-primary)" stroke="var(--elem1-primary)" stroke-width="50"></path>
+                </g>
+            </svg>
+                <h3 class="tag-text">My Resume</h3>
+        </div>
+    </a>
+</div>

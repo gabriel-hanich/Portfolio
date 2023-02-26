@@ -1,0 +1,144 @@
+.alert{
+    &-container{
+        width: 80%;
+        max-width: 1000px;
+        margin: auto;
+        margin-top: 100px;
+        text-align: center;
+    }
+    &-loading{
+        width: 100%;
+        max-width: 100px;
+        margin: auto;
+    }
+    &-subheading{
+        margin-top: 5px;
+        font-size: 1.4rem;
+    }
+}
+
+.hero{
+    &-container{
+        width: 100vw;
+        aspect-ratio: 16/4;
+        background-image: url("../../../../assets/green-top-stacked-waves.svg");
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 30px;
+    }
+ 
+    &-content{
+        width: fit-content;
+        aspect-ratio: 4/2;
+        text-align: center;
+        
+        margin: auto;
+        padding-top: 15px;
+        padding: 5px;
+
+        background: none;
+
+        border-radius: 30px;
+
+        border-top: 30px #fff solid;
+        border-left: 15px #fff solid;
+        border-right: 15px #fff solid;
+        border-bottom: 45px #fff solid;
+    }
+    &-text{
+        color: #fff;
+    }
+}
+
+.content{
+    &-container{
+        width: 100vw;
+        max-width: 1000px;
+        margin: auto;
+    }
+    
+    margin: auto;
+    margin-top: 50px;
+    width: 90%;
+    padding-bottom: 150px;
+
+}
+
+.tech{
+    &-container{
+        width: 90%;
+        margin: auto;
+        height: fit-content;
+        padding: 10px;
+
+        border: 2px var(--elem1-primary) solid;
+        border-radius: 15px;
+    }
+    &-imgs{
+        &-container{
+            width: 100%;
+            border-top: 1px var(--elem1-primary) solid;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        &-ico{
+            margin-top: 15px;
+            width: fit-content;
+            height: auto;
+            max-width: 75px;
+            filter: invert(98%) sepia(0%) saturate(821%) hue-rotate(291deg) brightness(120%) contrast(100%);
+        }
+    }
+}
+
+
+
+
+@media screen and(max-width: 1500px){
+    .hero{
+        &-content{
+            width: fit-content;
+            padding: 30px;
+            aspect-ratio: unset;
+        }
+    }
+}
+@media screen and(max-width: 900px){
+    .hero{
+        &-content{
+            width: fit-content;
+            padding: 10px;
+            border-top: 15px #fff solid;
+            border-left: 15px #fff solid;
+            border-right: 15px #fff solid;
+            border-bottom: 15px #fff solid;
+        }
+    }
+    .tech{
+        &-container{
+            margin-top: 150px;
+        }
+    }
+}
+@media screen and(max-width: 500px){
+    .hero{
+        &-container{
+            margin-top: 15px;
+            width: 100vw;
+            max-width: 120vw;
+            overflow: visible;
+        }
+        &-content{
+            margin-top: -15px;
+            border: 5px #fff solid;
+        }
+    }
+    .tech{
+        &-imgs-ico{
+            max-width: 35px;
+        }
+    }
+}

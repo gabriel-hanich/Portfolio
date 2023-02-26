@@ -1,0 +1,61 @@
+@font-face {
+    font-family: quicksand;
+    src: url(./assets/Fonts/Quicksand-Regular.ttf);
+}
+
+:root{
+    --bg-color: 45, 48, 71;
+    --base-color: 224, 211, 222;
+    --highlight-color: 255, 255, 255;
+    --hidden-color: 0, 0, 0;
+}
+
+html{
+    background-color: rgba(var(--bg-color));
+    margin: 0px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    color: rgba(var(--highlight-color), $alpha: 1.0);
+    font-family: quicksand;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+.hidden{
+    display: none;
+}
+
+.menu-container{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+.gradient-text{
+    background: #ff00cc;  /* fallback for old browsers */
+    background: linear-gradient(to right, #5a5acc, #d666d1, #5a5acc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    background-position: 0% center;
+    animation: change-background linear 2s infinite;
+}
+
+@keyframes change-background {
+    0%{
+        background-position: 0% center;
+    }
+    100%{
+        background-position: -200% center;
+    }
+}

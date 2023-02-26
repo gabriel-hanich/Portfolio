@@ -1,61 +1,100 @@
-@font-face {
-    font-family: quicksand;
-    src: url(./assets/Fonts/Quicksand-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400&display=swap');
 
 :root{
-    --bg-color: 45, 48, 71;
-    --base-color: 224, 211, 222;
-    --highlight-color: 255, 255, 255;
-    --hidden-color: 0, 0, 0;
+    --root-primary: #011627;
+    --root-content: #dee2e6;
+    --root-secondary: #4e54c8;
+
+    --elem1-primary: #2ec4b6;
+    --elem1-content: #fff;
+    --elem1-secondary: #3A5683;
+
+    --elem2-primary: #6564db;
+    --elem2-content: #fff;
+    --elem2-secondary: #b642b4;
+
+    --elem3-primary: #003566;
+    --elem3-content: #fff;
+    --elem3-secondary: #4976a0;
+    
+    --elem4-primary: #d90429;
+    --elem4-content: #fff;
+    --elem4-secondary: rgb(71, 11, 21);
+
 }
 
+
 html{
-    background-color: rgba(var(--bg-color));
+    background-color: var(--root-primary);
     margin: 0px;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-
 body{
-    margin: 0px;
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, a{
-    color: rgba(var(--highlight-color), $alpha: 1.0);
-    font-family: quicksand;
+html::-webkit-scrollbar {
+    display: none;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li, button, label, input{
+    font-family: 'Heebo', sans-serif;
+    color: var(--root-content);
+    font-weight: 300;
 }
 
 h1{
     font-size: 3rem;
+    font-weight: 450;
+}
+h2{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.15rem;
 }
 
-.hidden{
-    display: none;
+.page-container{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
-.menu-container{
-    position: fixed;
-    top: 0%;
-    left: 0%;
+.img-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.gradient-text{
-    background: #ff00cc;  /* fallback for old browsers */
-    background: linear-gradient(to right, #5a5acc, #d666d1, #5a5acc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200%;
-    background-position: 0% center;
-    animation: change-background linear 2s infinite;
-}
-
-@keyframes change-background {
-    0%{
-        background-position: 0% center;
+.wave{
+    width: 100vw;
+    aspect-ratio: 8/1;
+    min-height: 10vh;
+    &-top{
+        margin-top: 150px;
     }
-    100%{
-        background-position: -200% center;
+    &-bottom{
+        margin-bottom: 150px;
+    }
+}
+
+@media screen and(max-width: 950px){
+    h1{
+        font-size: 2rem;
+        font-weight: 450;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 1rem;
     }
 }
