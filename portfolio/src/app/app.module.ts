@@ -17,6 +17,8 @@ import { ContactComponent } from './components/items/contact/contact.component';
 import { NavbarComponent } from './components/items/navbar/navbar.component';
 import { LoadingComponent } from './components/items/loading/loading.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
+import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
+import { FooterComponent } from './components/items/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AdminComponent } from './components/pages/admin/admin.component';
     ContactComponent,
     NavbarComponent,
     LoadingComponent,
-    AdminComponent
+    AdminComponent,
+    ProjectsPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

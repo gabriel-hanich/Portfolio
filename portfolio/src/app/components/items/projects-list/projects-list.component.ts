@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data/data.service';
 import { Project } from 'src/types';
@@ -9,13 +9,19 @@ import { Project } from 'src/types';
   styleUrls: ['./projects-list.component.scss']
 })
 export class ProjectsListComponent implements OnInit {
+  @Input() minImportance: number = 3;
+  @Input() subheadingText: string = "I learn best when I'm working on Projects. Below is a sample of what I've been up to"
+
+
   public projectsList: Project[] = [];
 
   constructor(private router: Router, private globalData: DataService) { }
 
   ngOnInit(): void {
     let allProjectList = this.globalData.getProjectList();
-    this.projectsList = allProjectList.filter((project: Project) => project.importantRank === 3) 
+    this.projectsList = allProjectList.filter((project: Project) => project.importantRank >= this.minImportance);
+    console.log(this.projectsList);
+    console.log(this.minImportance)
     setTimeout(()=>{
       this.registerScrollEffect();
     }, 500)
@@ -48,8 +54,8 @@ export class ProjectsListComponent implements OnInit {
     });
   }
 
-  goToProject(projectId: string): void {
-    this.router.navigateByUrl("project/" + projectId)
+  goToLink(projectId: string): void {
+    this.router.navigateByUrl(projectId)
   }
 
 }

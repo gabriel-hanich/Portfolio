@@ -4,6 +4,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { PrivateComponent } from './components/pages/private/private.component';
 import { ProjectComponent } from './components/pages/project/project.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
+import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: "private",
     component: PrivateComponent
+  },
+  {
+    path: "project",
+    component: ProjectsPageComponent
   },
   {
     path: "project/:projectName",

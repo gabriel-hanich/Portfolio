@@ -29,7 +29,7 @@
             <p style="font-size: 1.25rem;">Convert Wordpress data to .json file</p>
             <form (submit)="getWordPressData(urlInput.value, $event)" class="admin-elem-form">
                 <label for="Url" class="admin-elem-form-label">Wordpress Site URL</label>
-                <input name="Url" type="text" class="admin-elem-form-input" #urlInput value="{{siteUrl}}">
+                <input name="Url" type="text" class="admin-elem-form-input" #urlInput value="{{siteUrl}}" placeholder="http://portfolio.local/wp-json/wp/v2">
                 <button class="admin-elem-form-submit">Generate</button>
             </form>
         </div>
@@ -42,3 +42,4 @@
 </div>
 
 <a id="downloadAnchorElem"></a>
+<app-footer></app-footer>

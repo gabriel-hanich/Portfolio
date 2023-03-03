@@ -20,11 +20,15 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this.projectId = this.route.snapshot.paramMap.get("projectName") as string
     this.connections.getProjectData(this.projectId).then((res)=>{
-      console.log(res);
-      this.projectName = res["projectName"];
-      this.techUsed = res["projectTech"].split(",");
-      this.content = res["content"]["rendered"];
-      this.readyState = "success";
+      console.log(res)
+      if(res === "ERROR"){
+        this.readyState = "fail"
+      }else{
+        this.projectName = res["projectName"];
+        this.techUsed = res["projectTech"].split(",");
+        this.content = res["content"]["rendered"];
+        this.readyState = "success";
+      }
     }).catch((err)=> this.readyState = "fail")
   }
 

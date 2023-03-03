@@ -45,6 +45,7 @@ export class ConnectionsService {
                     resolve(proj);
                   }
               });
+              resolve("ERROR");
             },
             error: error => reject(error)
           }

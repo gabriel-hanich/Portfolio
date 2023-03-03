@@ -12,7 +12,7 @@
     top: 0%;
     left: 0%;
     margin: 0;
-    height: 100vh;
+    height: fit-content;
     min-width: 100vw;
 }
 
@@ -222,6 +222,12 @@
         margin: auto;
         margin-top: 50px;
     }
+}
+
+.footer{
+    width: 100px;
+    height: 100px;
+
 }
 
 @media screen and(max-width: 1300px){
