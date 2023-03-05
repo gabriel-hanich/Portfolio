@@ -12,6 +12,14 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    document.addEventListener("scroll", (ev: Event)=>{
+      console.log(window.scrollY)
+      if(window.scrollY > 10){
+        (document.getElementById("scrollContainer") as HTMLElement).style.opacity = '0';
+      }else{
+        (document.getElementById("scrollContainer") as HTMLElement).style.opacity = '1';
+      }
+    });
   }
 
 }

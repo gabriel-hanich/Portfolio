@@ -19,6 +19,7 @@ import { LoadingComponent } from './components/items/loading/loading.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
 import { FooterComponent } from './components/items/footer/footer.component';
+import { ScrollComponent } from './components/items/scroll/scroll.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FooterComponent } from './components/items/footer/footer.component';
     LoadingComponent,
     AdminComponent,
     ProjectsPageComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollComponent
   ],
   imports: [
     BrowserModule,
