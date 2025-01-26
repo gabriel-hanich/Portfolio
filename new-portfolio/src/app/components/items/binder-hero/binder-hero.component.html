@@ -1,0 +1,58 @@
+<div class="hero">
+    <div class="binder">
+        <div class="binder-cover lh-cover">
+            <div class="binder-page">
+                <h1 class="title">Gabriel Hanich</h1>
+                <div class="line"></div>
+                <div class="skills-bar">
+                    <p>Political Science</p>
+                    <div class="dot"></div>
+                    <p>Data Analytics</p>
+                    <div class="dot"></div>
+                    <p>Programming</p>
+                </div>
+                <div class="text-box">
+                    <p>I'm an {{age}} Year old Data Scientist in Canberra. I enjoy working on projects that combine politics and data analytics.</p>
+                    <p>I'm currently studying a <em>Bachelor of Political Science</em> and a <em>Bachelor of Applied Data Analytics</em> at ANU.</p>
+                </div>
+                <h2 class="subtitle">Chapters</h2>
+                <div class="sections">
+                    <div class="sections-item">
+                        <h3>1</h3>
+                        <a href="#" class="sections-text">Experience</a>
+                    </div>
+                    <div class="sections-item">
+                        <h3>2</h3>
+                        <a href="#" class="sections-text">Projects</a>
+                    </div>
+                    <div class="sections-item">
+                        <h3>3</h3>
+                        <a href="#" class="sections-text">Hobbies</a>
+                    </div>
+                    <div class="sections-item">
+                        <h3>4</h3>
+                        <a href="#" class="sections-text">Contact</a>
+                    </div>
+                    <div class="sections-item">
+                        <h3>5</h3>
+                        <a href="#" class="sections-text">Resume</a>
+                    </div>
+                </div>
+                <div class="subtitle bottom">
+                    <p>&copy; Gabriel Hanich {{year}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="binder-cover turn">
+            <h1 class="mirror binder-text">Resumes</h1>
+            <div class="sticky-container">
+                <div class="sticky-note" *ngFor="let fileSlug of stickySvgs">
+                    <div class="sticky-note-head"></div>
+                    <div class="sticky-note-body">
+                        <img class="sticky-note-img" src="../../../../assets/svgs/{{fileSlug}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

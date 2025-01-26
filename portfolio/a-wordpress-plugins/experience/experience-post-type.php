@@ -60,7 +60,7 @@ function experience_add_meta_boxes(){
             $meta_list[$i]['value_key'],
             $meta_list[$i]['heading_text'],
             function($post) use ( $meta_list, $i ){
-                projects_render_meta_box($post, $meta_list[$i]['label_text'], $meta_list[$i]['value_key'], $meta_list[$i]['type']);
+                experience_render_meta_box($post, $meta_list[$i]['label_text'], $meta_list[$i]['value_key'], $meta_list[$i]['type']);
             },
             'experiences'
         );

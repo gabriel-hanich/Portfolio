@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "cutive";
+    src: url("./assets/fonts/CutiveMono.ttf");
+}
+@font-face {
+    font-family: "gudea";
+    src: url("./assets/fonts/Gudea.ttf");
+}
+
+
+:root {
+    --text: #101523;
+    --background: #FFFFEE;
+    --viewPortBackground: #b1b1b3;
+    --primary: #224d63;
+    --secondary: #1282A2;
+}
+
+body{
+    background-color: var(--background);
+}
+
+
+h1,h2,h3,h4,h5,h6,button,li,ul,p,a, input{
+    text-decoration: none;
+    color: var(--text);
+    font-family: 'gudea';
+    margin-bottom: 5px;
+}
+
+h1,h2,h3,h4,h5,h6,a{
+    font-family: 'cutive';
+}
+
+a{
+    font-weight: 700;
+    font-size: large;
+}
+
+em{
+    font-style: normal;
+    color: var(--primary);
+    font-weight: bolder;
+}
+
+.page-container{
+    width: 99vw;
+    margin: none;
+    padding: none;
+    height: fit-content;
+}
+
+.title, .subtitle{
+    text-align: center;
+}
+
+.section-container{
+    width: 100%;
+    height: fit-content;
+    margin: none;
+}
