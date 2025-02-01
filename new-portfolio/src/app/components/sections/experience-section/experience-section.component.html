@@ -1,0 +1,10 @@
+<div class="section-container">
+    <div class="title-container">
+        <app-ruler-heading titleText="Experience" pargraphText="I have a variety of experience in politics and programming related fields"></app-ruler-heading>
+    </div>
+    <div class="experience-container">
+        <div class="experience-bar" *ngFor="let experience of experienceList" style="--bar-width: {{experience['barWidth']}}">
+            <app-ruler-text text="{{experience['title']}} - {{experience['dateStr']}}" svgURL="{{experience['svgURL']}}"></app-ruler-text>
+        </div>
+    </div>
+</div>

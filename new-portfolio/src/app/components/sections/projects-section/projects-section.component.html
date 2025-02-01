@@ -1,11 +1,29 @@
-<div class="title-container">
-    <div class="envelope envelope-container">
-        <div class="envelope envelope-lid"></div>
-        <div class="envelope envelope-front">
-            <img src="../../../../assets/svgs/envelope.svg" alt="" class="envelope-img">
+<div class="section-container">
+    <div class="title-container">
+        <app-envelope title="Projects" paragraph="I learn best by working on Projects. Below is a selection of the work I've done" [startOpened]="true" [openOnScroll]="false" ></app-envelope>   
+    </div>
+    <div class="selector-container">
+        <div class="selector-button" *ngFor="let label of fields" (click)="currentField=label" [ngClass]="[currentField == label? 'selector-active' : '']">
+            <p class="selector-text">{{label}}</p>
         </div>
-        <div class="envelope envelope-paper">
-            <h2 class="title">Looking Glass</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum veritatis minima vitae iure sit mollitia odit quo commodi porro accusantium voluptate natus laboriosam necessitatibus dignissimos, repellendus deleniti beatae quos nobis cupiditate temporibus voluptates rem doloremque? Omnis eligendi provident, voluptatum neque suscipit unde quas mollitia quos aspernatur quisquam rem, architecto amet facilis minus facere illo autem perspiciatis pariatur, temporibus sapiente. Consequuntur laboriosam tenetur totam, ipsum ullam, vitae, possimus sapiente fugit est eligendi tempora quisquam quae. Omnis autem ipsum magnam nemo rem. Repellat, omnis earum. At neque consequatur quas, quaerat iure pariatur. Facilis incidunt ab ipsum vitae dolorum eius quisquam quis fugit?</p>
+    </div>
+    <div class="van-container">
+        <img src="../../../../assets/svgs/delivery-van.svg" alt="" class="van-img">
+    </div>
+    <div class="list">
+        <div 
+        class="list-item" 
+        *ngFor="let project of projectsList; index as i" style="transform: rotate({{project['randFloat'] * 10 - 5}}deg);" 
+        [ngClass]="[(currentField==project['field'] || currentField=='all') ? 'list-item-active' : 'list-item-inactive']"
+        >
+            <app-envelope 
+            title="{{project['title']}}"
+            paragraph="{{project['about']}}"
+            link="project/{{project['slug']}}" 
+            [openOnScroll]="true" 
+            [openDelay]="i*750+2000"
+            dotColor="{{project['dotColor']}}"
+            ></app-envelope>
         </div>
+    </div>
 </div>

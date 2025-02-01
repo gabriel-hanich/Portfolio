@@ -7,6 +7,10 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 import { BinderHeroComponent } from './components/items/binder-hero/binder-hero.component';
 import { ExperienceSectionComponent } from './components/sections/experience-section/experience-section.component';
 import { ProjectsSectionComponent } from './components/sections/projects-section/projects-section.component';
+import { EnvelopeComponent } from './components/items/envelope/envelope.component';
+import { RulerTextComponent } from './components/items/ruler-text/ruler-text.component';
+import { RulerHeadingComponent } from './components/items/ruler-heading/ruler-heading.component';
+import { ProjectPageComponent } from './components/pages/project-page/project-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +19,10 @@ import { ProjectsSectionComponent } from './components/sections/projects-section
     BinderHeroComponent,
     ExperienceSectionComponent,
     ProjectsSectionComponent,
+    EnvelopeComponent,
+    RulerTextComponent,
+    RulerHeadingComponent,
+    ProjectPageComponent,
   ],
   imports: [
     BrowserModule,

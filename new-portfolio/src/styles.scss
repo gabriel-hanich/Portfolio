@@ -6,6 +6,10 @@
     font-family: "gudea";
     src: url("./assets/fonts/Gudea.ttf");
 }
+@font-face {
+    font-family: "hurricane";
+    src: url("./assets/fonts/Hurricane.ttf");
+}
 
 
 :root {
@@ -14,6 +18,7 @@
     --viewPortBackground: #b1b1b3;
     --primary: #224d63;
     --secondary: #1282A2;
+    --paper: #ecdfcc;
 }
 
 body{
@@ -43,6 +48,13 @@ em{
     font-weight: bolder;
 }
 
+.handwritten{
+    font-family: 'hurricane';
+    &-title{
+        font-size: 5rem;
+    }
+}
+
 .page-container{
     width: 99vw;
     margin: none;
@@ -58,4 +70,11 @@ em{
     width: 100%;
     height: fit-content;
     margin: none;
+}
+
+.title-container{
+    margin: auto;
+    width: 35vw;
+    height: auto;
+    margin-top: 150px;
 }
