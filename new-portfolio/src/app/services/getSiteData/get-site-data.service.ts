@@ -7,124 +7,13 @@ import { SiteData } from 'src/types';
   providedIn: 'root'
 })
 export class GetSiteDataService {
-  private testData:SiteData = {
-    "projects": [
-        {
-            "slug": "lookingGlass",
-            "title": "Looking Glass",
-            "shortDesc": "New method to quickly recall files",
-            "gitLink": "https://github.com/gabriel-hanich/lookingGlass",
-            "icons": [
-                "https://www.svgrepo.com/show/512738/python-127.svg",
-                "https://www.svgrepo.com/show/330008/autohotkey.svg"
-            ],
-            "field": "programming",
-            "dotColor": "#c281e3",
-            "bodyText": "<p>Looking glass is a new way of managing files on Windows. Inspired by the <a href='https://johnnydecimal.com/'>Johnny Decimal</a> system, Looking Glass enables the user to quickly move find their files by remembering short IDs. Looking Glass automatically manages ID creation, folder management and has basic backup functionality</p>"
-        },
-        {
-            "slug": "computePower",
-            "title": "Compute Power",
-            "shortDesc": "Using Artificial Intelligence to simulate the NSW Power Grid",
-            "gitLink": "https://github.com/gabriel-hanich/compute-power",
-            "icons": [
-                "https://www.svgrepo.com/show/512738/python-127.svg",
-                "https://www.svgrepo.com/show/341956/jupyter.svg",
-                "https://www.svgrepo.com/show/452361/spreadsheet.svg"
-            ],
-            "field": "programming",
-            "dotColor": "#c281e3",
-            "bodyText": "<p>Compute Power was enabled me to study the efficacy of the proposed Illawarra Offshore Wind Farm using a regression techniques. I used meteorological and electricity demand data to produce a regression model that could predict energy demand based on weather conditions. I then developed two other models to simulate wind and solar power across NSW ot determine how well these sources could meet peak demand. This project was a key component of my Year 12 Science Extension project, with the research being published by the NSW Department of Education in the <a href='https://issuu.com/doecurriculum/docs/journal_of_science_extension_research_vol._4_20'>Journal of Science Extension</a></p>"
-        },
-        {
-            "slug": "theySpeak",
-            "title": "They Speak for Us",
-            "shortDesc": "Big Data Analysis of the news",
-            "gitLink": "https://github.com/gabriel-hanich/They-Speak-for-Us",
-            "icons": [
-                "https://www.svgrepo.com/show/512738/python-127.svg",
-                "https://www.svgrepo.com/show/341956/jupyter.svg",
-                "https://www.svgrepo.com/show/473729/mongodb.svg",
-                "https://www.svgrepo.com/show/445552/aws.svg",
-                "https://www.svgrepo.com/show/503165/angular.svg",
-                "https://www.svgrepo.com/show/445914/node-js.svg"
-            ],
-            "field": "programming",
-            "dotColor": "#c281e3",
-            "bodyText": "<p>They Speak for Us was a long-running data collection and analysis project that scraped the RSS feeds of 28 different news outlets over 3 years from 2021 to 2024, producing a MongoDB database containing 700,000 headlines. This data was then analysed using key-word and sentiment analysis to determine trends in media reporting. As a part of this project, I used developed an API in MongoDB, and a front-end using Angular, allowing for simple comparisons of keyword frequency over time</p>"
-        },
-        {
-            "slug": "gongMun23",
-            "title": "GongMUN23",
-            "shortDesc": "Participated in the 2023 Wollongong Uni Model UN",
-            "gitLink": "",
-            "icons": [],
-            "field": "politics",
-            "dotColor": "#44b5cf",
-            "bodyText": "<p>I participated in the 2023 Wollongong University Model United Nations, representing Jamaica. During this event, we discussed the repatriation of stolen cultural artifacts, eventually creating a resolution to enable museums to more readily exchange stolen artifacts.</p>"
-        },
-        {
-            "slug": "sydmun23",
-            "title": "SydMUN23",
-            "shortDesc": "Participated in the 2023 uSyd Model UN",
-            "gitLink": "",
-            "icons": [],
-            "field": "politics",
-            "dotColor": "#44b5cf",
-            "bodyText": "<p>In 2023 I participated in the University of Sydney Model UN conference for 3 days. I represented Chile at the UN Human Rights Council debating a resolution to prohibit torture. <br>I gained valuable skills in teamwork as I helped to lead a bloc of countries in pushing for reparations for torture victims.</p>"
-        },
-        {
-            "slug": "sydmun24",
-            "title": "sydMUN24",
-            "shortDesc": "Participated in the 2024 uSyd Model UN",
-            "gitLink": "",
-            "icons": [],
-            "field": "politics",
-            "dotColor": "#44b5cf",
-            "bodyText": "<p>During SydMUN24 I represented Haiti at the UN Human Rights Council. We debated the rights of all peoples to self determination, as well as steps to reduce the digital divide between the global north and south.<br>I further developed my communication and leadership skills by leading a bloc of global south countries to advocate for greater focusses on the global south's internet infrastructure.</p>"
-        }
-    ],
-    "experience":[
-        {
-            "title": "MongoDB",
-            "strDate": "2022-04-10",
-            "icon": "https://www.svgrepo.com/show/473729/mongodb.svg"
-        },
-        {
-            "title": "Typescript",
-            "strDate": "2022-02-02",
-            "icon": "https://www.svgrepo.com/show/342317/typescript.svg"
-        },
-        {
-            "title": "Angular",
-            "strDate": "2022-02-01",
-            "icon": "https://www.svgrepo.com/show/503165/angular.svg"
-        },
-        {
-            "title": "AWS",
-            "strDate": "2021-09-15",
-            "icon": "https://www.svgrepo.com/show/445552/aws.svg"
-        },
-        {
-            "title": "JavaScript",
-            "strDate": "2021-03-10",
-            "icon": "https://www.svgrepo.com/show/473670/javascript.svg"
-        },
-        {
-            "title": "Python",
-            "strDate": "2020-03-01",
-            "icon": "https://www.svgrepo.com/show/372929/python.svg"
-        }
-    ]
-};
-
   constructor(private httpClient: HttpClient) { }
 
   getSiteData(): Promise<SiteData>{
     return new Promise(async(resolve, reject)=>{
         console.log("DOWNLOADING DATA")
         this.httpClient.get(environment.dataStore).subscribe((event)=>{
-           resolve(this.testData)
+           resolve(event as SiteData)
         })
     })
   }

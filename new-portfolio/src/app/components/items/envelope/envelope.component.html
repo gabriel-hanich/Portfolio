@@ -1,7 +1,7 @@
 <div class="envelope envelope-container" id={{title}}>
     <div class="envelope envelope-lid" [ngClass]="[startOpened ? 'opened-lid' : '', animateOpen ? 'animate-lid' : '']"></div>
     <div class="envelope envelope-front">
-        <img src="../../../../assets/svgs/envelope.svg" alt="" class="envelope-img">
+        <img src="https://raw.githubusercontent.com/gabriel-hanich/Portfolio/refs/heads/main/new-portfolio/src/assets/svgs/envelope.svg" alt="" class="envelope-img">
         <div class="envelope-front-circle" *ngIf="dotColor!=''" style="background-color: {{dotColor}};"></div>
     </div>
     <div class="envelope envelope-paper" [ngClass]="[startOpened ? 'opened-page' : '', animateOpen ? 'animate-page' : '']">
