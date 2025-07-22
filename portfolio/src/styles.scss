@@ -1,100 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400&display=swap');
-
-:root{
-    --root-primary: #011627;
-    --root-content: #dee2e6;
-    --root-secondary: #4e54c8;
-
-    --elem1-primary: #2ec4b6;
-    --elem1-content: #fff;
-    --elem1-secondary: #3A5683;
-
-    --elem2-primary: #6564db;
-    --elem2-content: #fff;
-    --elem2-secondary: #b642b4;
-
-    --elem3-primary: #003566;
-    --elem3-content: #fff;
-    --elem3-secondary: #4976a0;
-    
-    --elem4-primary: #d90429;
-    --elem4-content: #fff;
-    --elem4-secondary: rgb(71, 11, 21);
-
+@font-face {
+    font-family: "cutive";
+    src: url("./assets/fonts/CutiveMono.ttf");
+}
+@font-face {
+    font-family: "gudea";
+    src: url("./assets/fonts/Gudea.ttf");
+}
+@font-face {
+    font-family: "hurricane";
+    src: url("./assets/fonts/Hurricane.ttf");
+}
+@font-face {
+    font-family: "chomsky";
+    src: url("./assets/fonts/Chomsky.otf");
+}
+@font-face {
+    font-family: "libertin";
+    src: url("./assets/fonts/Libertin.otf");
 }
 
 
-html{
-    background-color: var(--root-primary);
-    margin: 0px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+:root {
+    --text: #101523;
+    --background: #FFFFEE;
+    --viewPortBackground: #b1b1b3;
+    --primary: #0a2b3b;
+    --secondary: #1282A2;
+    --paper: #ecdfcc;
 }
+
 body{
-    margin: 0;
-    padding: 0;
-}
-
-html::-webkit-scrollbar {
-    display: none;
-    width: 100vw;
+    background-color: var(--background);
     overflow-x: hidden;
 }
 
-*{
-    margin: 0;
-    padding: 0;
+
+h1,h2,h3,h4,h5,h6,button,li,ul,p,a, input{
+    text-decoration: none;
+    color: var(--text);
+    font-family: 'gudea';
+    margin-bottom: 5px;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, li, button, label, input{
-    font-family: 'Heebo', sans-serif;
-    color: var(--root-content);
-    font-weight: 300;
+h1,h2,h3,h4,h5,h6,a{
+    font-family: 'cutive';
 }
 
-h1{
-    font-size: 3rem;
-    font-weight: 450;
+a{
+    font-weight: 600;
+    font-size: large;
 }
-h2{
-    font-size: 2rem;
+
+em{
+    font-style: normal;
+    color: var(--primary);
+    font-weight: bolder;
 }
+
 p{
-    font-size: 1.15rem;
+    margin-top: 0px;
 }
+
+.handwritten{
+    font-family: 'hurricane';
+    font-weight: 200;
+
+    &-title{
+        font-size: 5rem;
+    }
+}
+
+
+.fancy{
+    font-family: 'chomsky';
+}
+
 
 .page-container{
-    width: 100vw;
-    margin: 0;
-    padding: 0;
+    width: 99vw;
+    margin: none;
+    padding: none;
+    height: fit-content;
 }
 
-.img-bg{
-    background-size: cover;
-    background-repeat: no-repeat;
+.title, .subtitle{
+    text-align: center;
 }
 
-.wave{
-    width: 100vw;
-    aspect-ratio: 8/1;
-    min-height: 10vh;
-    &-top{
-        margin-top: 150px;
-    }
-    &-bottom{
-        margin-bottom: 150px;
-    }
+.section-container{
+    width: 100%;
+    height: fit-content;
+    margin: none;
 }
 
-@media screen and(max-width: 950px){
-    h1{
-        font-size: 2rem;
-        font-weight: 450;
-    }
-    h2{
-        font-size: 1.5rem;
-    }
-    p{
-        font-size: 1rem;
-    }
+.title-container{
+    margin: auto;
+    width: 35vw;
+    height: auto;
+    margin-top: 150px;
+}
+
+.center-text{
+    text-align: center;
 }

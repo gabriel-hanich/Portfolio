@@ -1,45 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/pages/home/home.component';
-import { WelcomeTextComponent } from './components/items/welcome-text/welcome-text.component';
-import { HeroContainerComponent } from './components/items/hero-container/hero-container.component';
-import { ProjectsRotundaComponent } from './components/items/projects-rotunda/projects-rotunda.component';
-import { PrivateComponent } from './components/pages/private/private.component';
-import { ProjectsListComponent } from './components/items/projects-list/projects-list.component';
-import { ProjectComponent } from './components/pages/project/project.component';
-import { ExperienceComponent } from './components/items/experience/experience.component';
-import { ResumeComponent } from './components/items/resume/resume.component';
-import { ContactComponent } from './components/items/contact/contact.component';
-import { NavbarComponent } from './components/items/navbar/navbar.component';
-import { LoadingComponent } from './components/items/loading/loading.component';
-import { AdminComponent } from './components/pages/admin/admin.component';
-import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { ExperienceSectionComponent } from './components/sections/experience-section/experience-section.component';
+import { ProjectsSectionComponent } from './components/sections/projects-section/projects-section.component';
+import { EnvelopeComponent } from './components/items/envelope/envelope.component';
+import { RulerTextComponent } from './components/items/ruler-text/ruler-text.component';
+import { RulerHeadingComponent } from './components/items/ruler-heading/ruler-heading.component';
+import { ProjectPageComponent } from './components/pages/project-page/project-page.component';
+import { NewspaperHeroComponent } from './components/items/newspaper-hero/newspaper-hero.component';
+import { ContactComponent } from './components/sections/contact/contact.component';
 import { FooterComponent } from './components/items/footer/footer.component';
-import { ScrollComponent } from './components/items/scroll/scroll.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    WelcomeTextComponent,
-    HeroContainerComponent,
-    ProjectsRotundaComponent,
-    PrivateComponent,
-    ProjectsListComponent,
-    ProjectComponent,
-    ExperienceComponent,
-    ResumeComponent,
+    HomePageComponent,
+    ExperienceSectionComponent,
+    ProjectsSectionComponent,
+    EnvelopeComponent,
+    RulerTextComponent,
+    RulerHeadingComponent,
+    ProjectPageComponent,
+    NewspaperHeroComponent,
     ContactComponent,
-    NavbarComponent,
-    LoadingComponent,
-    AdminComponent,
-    ProjectsPageComponent,
     FooterComponent,
-    ScrollComponent
   ],
   imports: [
     BrowserModule,

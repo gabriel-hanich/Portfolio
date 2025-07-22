@@ -1,23 +1,11 @@
 .footer{
     &-container{
-        width: 100vw;
+        margin-top: 100px;
+        width: 100%;
         height: fit-content;
-        min-height: 160px;
-    }
-    
-    &-wave{
-        width: 100vw;
-        aspect-ratio: 1770/300;
-        background-image: url("../../../../assets/root-layered-waves 2.svg");
-    }
-
-    &-content{
-        width: 100vw;
-        height: 150px;
-        background-color: var(--root-secondary);
-    }
-
-    &-text{
-        margin-left: 15px;
+        min-height: 50px;
+        border-top: 5px black dashed;
+        margin-bottom: 0px;
+        padding-left: 35px;
     }
 }

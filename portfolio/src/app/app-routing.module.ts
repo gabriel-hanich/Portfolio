@@ -1,36 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/pages/home/home.component';
-import { PrivateComponent } from './components/pages/private/private.component';
-import { ProjectComponent } from './components/pages/project/project.component';
-import { AdminComponent } from './components/pages/admin/admin.component';
-import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { ProjectPageComponent } from './components/pages/project-page/project-page.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomePageComponent 
   },
   {
-    path: "private",
-    component: PrivateComponent
-  },
-  {
-    path: "project",
-    component: ProjectsPageComponent
-  },
-  {
-    path: "project/:projectName",
-    component: ProjectComponent
-  },
-  {
-    path: "admin",
-    component: AdminComponent
+    path: "project/:projectSlug",
+    component: ProjectPageComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
