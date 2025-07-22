@@ -1,0 +1,70 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.44965106142809 58.342971146748994" width="78.44965106142809" height="58.342971146748994">
+  <!-- svg-source:excalidraw -->
+  <metadata></metadata>
+  <defs>
+    <style class="style-fonts"></style>
+  </defs>
+  <g stroke-linecap="round" transform="translate(19.41039386770558 10) rotate(0 19.814431709824134 14.203265207927046)">
+    <path d="M0 0 C14.66 0, 29.32 0, 39.63 0 M0 0 C9.78 0, 19.56 0, 39.63 0 M39.63 0 C39.63 8.36, 39.63 16.73, 39.63 28.41 M39.63 0 C39.63 5.77, 39.63 11.54, 39.63 28.41 M39.63 28.41 C31.64 28.41, 23.65 28.41, 0 28.41 M39.63 28.41 C30.4 28.41, 21.17 28.41, 0 28.41 M0 28.41 C0 19.2, 0 10, 0 0 M0 28.41 C0 17.18, 0 5.96, 0 0" stroke="#1971c2" stroke-width="4" fill="none"></path>
+  </g>
+  <g stroke-linecap="round">
+    <g transform="translate(19.41039386770558 39.22482508933973) rotate(0 -4.559072893134953 4.5590728931349815)">
+      <path d="M0 0 C-3.02 3.02, -6.04 6.04, -9.12 9.12 M0 0 C-3.33 3.33, -6.65 6.65, -9.12 9.12" stroke="#1971c2" stroke-width="4" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(59.03925669367595 39.22482536047903) rotate(0 4.559072893134953 4.5590728931349815)">
+      <path d="M0 0 C2.15 2.15, 4.3 4.3, 9.12 9.12 M0 0 C3 3, 5.99 5.99, 9.12 9.12" stroke="#1971c2" stroke-width="4" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(10 48.3429710893397) rotate(0 29.224825530714043 0)">
+      <path d="M0 0 C23.03 0, 46.06 0, 58.45 0 M0 0 C21.62 0, 43.24 0, 58.45 0" stroke="#1971c2" stroke-width="4" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(34.86395750943643 19.311037142908788) rotate(0 -2.4461142098824666 2.4461142098823814)">
+      <path d="M0 0 C-1.68 1.68, -3.36 3.36, -4.89 4.89 M0 0 C-1.59 1.59, -3.19 3.19, -4.89 4.89" stroke="#1971c2" stroke-width="2" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(29.97172920298931 24.203265484418807) rotate(0 2.4461142098824666 2.4461142098823814)">
+      <path d="M0 0 C1.61 1.61, 3.22 3.22, 4.89 4.89 M0 0 C1.69 1.69, 3.37 3.37, 4.89 4.89" stroke="#1971c2" stroke-width="2" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(43.58569392315644 19.311036885273097) rotate(0 2.4461142098824666 2.4461142098823814)">
+      <path d="M0 0 C1.24 1.24, 2.48 2.48, 4.89 4.89 M0 0 C1.45 1.45, 2.91 2.91, 4.89 4.89" stroke="#1971c2" stroke-width="2" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(48.47792222960311 24.203265226783174) rotate(0 -2.4461142098824666 2.4461142098823814)">
+      <path d="M0 0 C-1.94 1.94, -3.87 3.87, -4.89 4.89 M0 0 C-1.42 1.42, -2.84 2.84, -4.89 4.89" stroke="#1971c2" stroke-width="2" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(37.80299278824259 29.509616892094925) rotate(0 1.4218326640889245 -5.306351742240963)">
+      <path d="M0 0 C0.6 -2.25, 1.2 -4.5, 2.84 -10.61 M0 0 C0.97 -3.63, 1.94 -7.26, 2.84 -10.61" stroke="#1971c2" stroke-width="2" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(22.079384673017103 42.06543865216713) rotate(0 16.58821821801064 0)">
+      <path d="M0 0 C9.42 0, 18.84 0, 33.18 0 M0 0 C9.06 0, 18.13 0, 33.18 0" stroke="#1971c2" stroke-width="1" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+  <g stroke-linecap="round">
+    <g transform="translate(19.65591139576577 43.78389810699548) rotate(0 19.568913679059392 0)">
+      <path d="M0 0 C12.57 0, 25.15 0, 39.14 0 M0 0 C8.98 0, 17.96 0, 39.14 0" stroke="#1971c2" stroke-width="1" fill="none"></path>
+    </g>
+  </g>
+  <mask></mask>
+</svg>
