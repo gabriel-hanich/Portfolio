@@ -1,24 +1,24 @@
-@font-face {
-    font-family: "cutive";
-    src: url("./assets/fonts/CutiveMono.ttf");
-}
-@font-face {
-    font-family: "gudea";
-    src: url("./assets/fonts/Gudea.ttf");
-}
-@font-face {
-    font-family: "hurricane";
-    src: url("./assets/fonts/Hurricane.ttf");
-}
-@font-face {
-    font-family: "chomsky";
-    src: url("./assets/fonts/Chomsky.otf");
-}
-@font-face {
-    font-family: "libertin";
-    src: url("./assets/fonts/Libertin.otf");
-}
 
+// @font-face {
+//     font-family: "cutive";
+//     src: url("./assets/fonts/CutiveMono.ttf");
+// }
+// @font-face {
+//     font-family: "gudea";
+//     src: url("./assets/fonts/Gudea.ttf");
+// }
+// @font-face {
+//     font-family: "hurricane";
+//     src: url("./assets/fonts/Hurricane.ttf");
+// }
+// @font-face {
+//     font-family: "chomsky";
+//     src: url("./assets/fonts/Chomsky.otf");
+// }
+// @font-face {
+//     font-family: "libertin";
+//     src: url("./assets/fonts/Libertin.otf");
+// }
 
 :root {
     --text: #101523;
@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6,button,li,ul,p,a, input{
 }
 
 h1,h2,h3,h4,h5,h6,a{
-    font-family: 'cutive';
+    // font-family: 'cutive';
 }
 
 a{
@@ -62,7 +62,7 @@ p{
 }
 
 .handwritten{
-    font-family: 'hurricane';
+    // font-family: 'hurricane';
     font-weight: 200;
 
     &-title{
@@ -72,7 +72,7 @@ p{
 
 
 .fancy{
-    font-family: 'chomsky';
+    // font-family: 'chomsky';
 }
 
 
