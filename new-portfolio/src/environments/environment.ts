@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  dataStore: "https://raw.githubusercontent.com/gabriel-hanich/Portfolio/main/siteData.json",
 };
 
 /*

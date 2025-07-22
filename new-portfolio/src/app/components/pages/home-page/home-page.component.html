@@ -1,5 +1,17 @@
 <div class="page-container">
-    <app-binder-hero></app-binder-hero>
-    <app-projects-section></app-projects-section>
-     <app-experience-section></app-experience-section>
+    <div id="hero">
+        <app-newspaper-hero></app-newspaper-hero>
+    </div>
+    <div id="projects">
+        <app-projects-section [sitePromise]="sitePromise"></app-projects-section>
+    </div>
+    <div id="experience">
+        <app-experience-section [sitePromise]="sitePromise"></app-experience-section>
+    </div>
+    <div id="contact">
+        <app-contact></app-contact>
+    </div>
+    <div id="footer">
+        <app-footer></app-footer>
+    </div>
 </div>

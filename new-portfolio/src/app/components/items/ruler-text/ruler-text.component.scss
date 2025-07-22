@@ -35,3 +35,21 @@
         width: auto;
     }
 }
+
+@media screen and (max-width: 1000px){
+    .ruler-text{
+        font-size: 1rem;
+    }
+    .ruler-img{
+        height: 65%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .ruler-text{
+        margin-left: 7px;
+    }
+    .ruler-img{
+        display: none;
+    }
+}

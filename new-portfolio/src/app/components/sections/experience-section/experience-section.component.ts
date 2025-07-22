@@ -1,12 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { Experience, FullExperience, SiteData } from 'src/types';
 
-type Experience = {
-  title: string,
-  svgURL: string,
-  startDate: Date,
-  dateStr: string,
-  barWidth: string
-}
 
 @Component({
   selector: 'app-experience-section',
@@ -14,49 +9,39 @@ type Experience = {
   styleUrls: ['./experience-section.component.scss']
 })
 export class ExperienceSectionComponent implements OnInit {
-
-  public experienceList: Experience[] = []
+  @Input() sitePromise:Promise<SiteData>
+  public experienceList: FullExperience[] = []
 
   constructor() { }
 
   ngOnInit(): void {
-    this.experienceList =[
-      {
-        "title": "Python",
-        "svgURL": "https://www.svgrepo.com/show/372929/python.svg",
-        "startDate": new Date(2020, 0, 1),
-        "dateStr": "",
-        "barWidth": ""
-      },
-      {
-        "title": "JavaScript",
-        "svgURL": "https://www.svgrepo.com/show/473670/javascript.svg",
-        "startDate": new Date(2021, 2, 3),
-        "dateStr": "",
-        "barWidth": ""
-      },
-      {
-        "title": "Angular",
-        "svgURL": "https://www.svgrepo.com/show/503165/angular.svg",
-        "startDate": new Date(2022, 1, 2),
-        "dateStr": "",
-        "barWidth": ""
-      },
-      {
-        "title": "Type Script",
-        "svgURL": "https://www.svgrepo.com/show/342317/typescript.svg",
-        "startDate": new Date(2022, 1, 2),
-        "dateStr": "",
-        "barWidth": ""
-      },
-    ]
+    this.sitePromise.then((siteData)=>{
+      this.experienceList = siteData["experience"].map(this.calcAllData)
 
-    this.experienceList.forEach((experience)=>{
-      experience['dateStr'] = this.calculateDateStr(experience.startDate)
+      this.experienceList.forEach((experience:FullExperience)=>{
+        experience.prettifiedDate = this.calculateDateStr(experience.startDate)
+      })
+      this.experienceList = this.calculateBarWidth(this.experienceList)
+      this.experienceList.sort((a:FullExperience, b:FullExperience)=>{
+        return a.startDate.getTime() - b.startDate.getTime()
+      })
     })
-    this.experienceList = this.calculateBarWidth(this.experienceList)
+
   }
 
+  calcAllData(dData:Experience): FullExperience{
+    const [year, month, day] = dData['strDate'].split('-').map(Number);
+    const dateObj = new Date(year, month - 1, day);
+    
+    return {
+      title: dData["title"],
+      icon: dData["icon"],
+      strDate: dData["strDate"],
+      prettifiedDate: "",
+      startDate: dateObj,
+      barWidth: '0'
+    }
+  }
 
   calculateDateStr(startDate: Date): string{
     let yearCount: number = 0
@@ -92,15 +77,15 @@ export class ExperienceSectionComponent implements OnInit {
     return dateStr
   }
 
-  calculateBarWidth(experienceList:Experience[]):Experience[]{
+  calculateBarWidth(experienceList:FullExperience[]):FullExperience[]{
     // Determine largest deltaSeconds
     let maxDelta:number = 0
-    experienceList.forEach((experience:Experience)=>{
+    experienceList.forEach((experience:FullExperience)=>{
       if(new Date().getTime() - experience.startDate.getTime() > maxDelta){
         maxDelta = new Date().getTime() - experience.startDate.getTime()
       }
     })
-    experienceList.forEach((experience:Experience)=>{
+    experienceList.forEach((experience:FullExperience)=>{
       let currentDelta: number = new Date().getTime() - experience.startDate.getTime()
       experience.barWidth = (Math.round(currentDelta / maxDelta * 1000) / 10).toString() + "%"
     })

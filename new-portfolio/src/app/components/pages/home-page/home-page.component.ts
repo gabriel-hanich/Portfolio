@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetSiteDataService } from 'src/app/services/getSiteData/get-site-data.service';
+import { SiteData } from 'src/types';
 
 @Component({
   selector: 'app-home-page',
@@ -6,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  public stickySvgs: Array<string> = ["curve.svg", "building.svg", "flag.svg", "laptop.svg"]
-  public age: number = Math.floor((Date.now() - 1159790400000) / 3.154e+10)
-  public year: number = new Date().getFullYear()
-  constructor() { }
+  public siteData: SiteData|null = null
+  public sitePromise: Promise<SiteData>
+
+  constructor(private siteDataService: GetSiteDataService) { }
 
   ngOnInit(): void {
-    // Calculate Age
+    this.sitePromise = this.siteDataService.getSiteData()
+
+    this.sitePromise.then((data)=>{
+      this.siteData = data
+      console.log(data)
+    })
   }
 
 }

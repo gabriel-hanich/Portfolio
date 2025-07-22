@@ -4,7 +4,7 @@
     </div>
     <div class="experience-container">
         <div class="experience-bar" *ngFor="let experience of experienceList" style="--bar-width: {{experience['barWidth']}}">
-            <app-ruler-text text="{{experience['title']}} - {{experience['dateStr']}}" svgURL="{{experience['svgURL']}}"></app-ruler-text>
+            <app-ruler-text text="{{experience['title']}} - {{experience['prettifiedDate']}}" svgURL="{{experience['icon']}}"></app-ruler-text>
         </div>
     </div>
 </div>
