@@ -1,0 +1,23 @@
+<div class="experience-container" id="experienceContainer">
+    <div class="experience-heading-container">
+        <div class="experience-bar-inner experience-heading-inner" data-animationDelay="0" data-maxWidth="100%">
+            <h1 class="experience-heading-text">Experience</h1>
+            <p class="experience-heading-subtext">I have experience working with a number of tools for Frontend, Backend and Data Analytics operations</p>
+        </div>
+    </div>
+    <div class="experience-bars">
+        <div class="experience-bar-outer" *ngFor="let bar of barList; let i=index">
+            <div class="experience-bar-inner" id="{{i}}bar" data-animationDelay="0s" style="--bar-width: {{bar['width']}};">
+                <div class="experience-bar-text-container">
+                    <div class="experience-bar-logo-container">
+                        <img class="experience-bar-logo-img" src="{{bar['svg']}}" alt="">
+                    </div>
+                    <p class="experience-bar-text-label">{{bar['name']}}</p>
+                    <div class="experience-bar-text-duration-container">
+                        <p class="experience-bar-text-duration">{{bar['duration']}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

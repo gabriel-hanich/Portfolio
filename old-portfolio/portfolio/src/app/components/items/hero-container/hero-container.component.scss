@@ -1,0 +1,159 @@
+.hero{
+    &-container{
+        width: 100%;
+        min-height: 50vh;
+        display: grid;
+        grid-template-areas:
+            "projects projects experience experience"
+            "projects projects contact resume";
+        gap: 15px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        overflow: hidden;
+    }
+    &-card{
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        transition: all 0.5s ease;
+        
+        &:hover{
+            transform: scale(0.975);
+            // background-position: 100% 50%;
+        }
+
+        &-title{
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+    &-content{
+        width: 95%;
+        height: 80%;
+        overflow: hidden;
+        margin: auto;
+        display: grid;
+        place-items: center;
+        margin-top: 0px;
+    }
+
+}
+
+#projects-card{
+    grid-area: projects;
+    min-width: 250px;
+    background-color: var(--elem1-primary);
+    width: 100%;
+    height: 500pxs;
+    animation: slideInLeft 1s ease !important;
+    background-image: url("../../../../assets/green-stacked-waves.svg");
+}
+#experience-card{
+    grid-area: experience;
+    max-height: 50vh;
+    height: 250px;
+    background-color: var(--elem2-primary);
+    animation: slideInRight 1s ease;
+    background-image: url("../../../../assets/purple-stacked-waves.svg");
+
+}
+#contact-card{
+    grid-area: contact;
+    background-color: var(--elem3-primary);
+    animation: slideInBottom 1s ease;
+    background-image: url("../../../../assets/blue-stacked-waves.svg");
+    height: 250px;
+}
+#resume-card{
+    grid-area: resume;
+    background-color: var(--elem4-primary);
+    animation: slideInRight 1s ease;
+    background-image: url("../../../../assets/red-stacked-waves.svg");
+    height: 250px;
+}
+
+
+@keyframes slideInLeft {
+    0%{
+        transform: translateX(-50vw);
+        opacity: 0;
+    }
+    65%{
+        opacity: 0.5;
+        transform: translateX(-10vw);
+    }
+    100%{
+        transform: translateX(-0vw);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0%{
+        transform: translateX(50vw);
+        opacity: 0;
+    }
+    65%{
+        opacity: 0.5;
+        transform: translateX(10vw);
+    }
+    100%{
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+@keyframes slideInBottom {
+    0%{
+        transform: translateY(50vw);
+        opacity: 0;
+    }
+    65%{
+        opacity: 0.5;
+        transform: translateY(10vw);
+    }
+    100%{
+        transform: translateY(0vw);
+        opacity: 1;
+    }
+}
+
+@media screen and(max-width: 1250px){
+    .hero{
+        &-container{
+            grid-template-areas:
+            "projects projects projects experience contact"
+            "projects projects projects experience resume";
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    #experience-card{
+        max-width: 350px;
+        max-height: none !important;
+        height: 100% !important;
+    }
+    #contact-card, #resume-card{
+        height: 250px;
+    }
+}
+
+@media screen and(max-width: 850px){
+    .hero{
+        &-container{
+            grid-template-areas:
+            "projects"
+            "projects"
+            "experience"
+            "resume"
+            "contact";
+            grid-template-columns: 1fr;
+        }
+        &-card{
+            width: 90vw !important;
+            margin: auto;
+        }
+    }
+    #experience-card{
+        max-width: 100vw;
+    }
+}

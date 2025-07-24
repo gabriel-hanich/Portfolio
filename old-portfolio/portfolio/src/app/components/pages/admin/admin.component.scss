@@ -1,0 +1,115 @@
+.elem{
+    &-container{
+        border: 5px var(--elem1-primary) solid;
+        border-radius: 30px;
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+        margin-top: 10%;
+        text-align: center;
+        padding: 30px;
+    }
+    &-form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+        padding: 15px;
+        gap: 30px;
+    }
+
+    &-input{
+        height: 30px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.35);
+        font-size: 1.25rem;
+    }
+    &-label{
+        font-size: 1.25rem;
+    }
+    &-btn{
+        grid-column: span 2;
+        
+        width: 35%;
+        min-width: 150px;
+        aspect-ratio: 5/1;
+        
+        margin: auto;
+        border: none;
+
+        background: var(--elem1-secondary);
+        box-shadow: 10px 9px 10px 3px rgb(0 0 0 / 35%);
+        
+        cursor: pointer;
+        border-radius: 15px;
+    }
+
+    &-loading{
+        max-width: 150px;
+        margin: auto;
+    }
+}
+
+.admin{
+    &-title{
+        text-align: center;
+    }
+    &-elem{
+        width: 25vw;
+        height: 35vh;
+        padding: 30px;
+        background-color: var(--elem1-secondary);
+        
+
+        &-container{
+            width: 80vw;
+            margin: auto;
+            margin-top: 30px;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 45px;
+            flex-wrap: wrap;
+
+        }
+
+        &-form{
+            width: 80%;
+            margin: auto;
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            
+            &-input{
+                min-width: 300px;
+                min-height: 35px;
+                background-color: rgba(0, 0, 0, 0.35);
+                border: none;
+                font-size: 1.25rem;
+            }
+            &-label{
+                min-width: 200px;
+            }
+            &-submit{
+                grid-column: span 2;
+        
+                width: 35%;
+                min-width: 150px;
+                aspect-ratio: 5/1;
+                
+                margin: auto;
+                margin-top: 20px;
+                border: none;
+
+                box-shadow: 10px 9px 10px 3px rgb(0 0 0 / 35%);
+                background-color: rgba(0, 0, 0, 0.7);
+                cursor: pointer;
+            }
+        }
+    }
+}

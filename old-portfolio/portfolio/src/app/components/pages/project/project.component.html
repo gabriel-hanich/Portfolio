@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="alert-container" *ngIf="readyState === 'loading'">
+    <h1>Loading</h1>
+    <div class="alert-loading">
+        <app-loading></app-loading>
+    </div>
+</div>
+<div *ngIf="readyState === 'success'">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-text">{{projectName}}</h1>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="tech-container">
+            <h2 class="tech-heading">Technologies Used</h2>
+            <div class="tech-imgs-container">
+                <img src="{{img}}" alt="" class="tech-imgs-ico" *ngFor="let img of techUsed">
+            </div>
+        </div>
+        <div class="content" [innerHTML]="content">
+        </div>
+    </div>
+</div>
+
+<div class="alert-container" *ngIf="readyState === 'fail'">
+    <h1>Error</h1>
+    <h2 class="alert-subheading">Oops, I haven't made this project yet. I'm sure I'll get there one day</h2>
+</div>
+
+<app-footer></app-footer>
+
